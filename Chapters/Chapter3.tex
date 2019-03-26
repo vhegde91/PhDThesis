@@ -1,0 +1,400 @@
+\chapter[SUSY search with photon]{Search for supersymmetry in events with a photon, jets, b-jets, and missing transverse momentum}
+\label{Chap3}
+\section{Introduction}
+This chapter describes a search for SUSY in events with one photon, large missing transverse momentum (\ptmiss), 
+and large hadronic activity.  The targeted production mechanism is described by simplified models of gluino and stop
+production as depicted in Figure \ref{fig:SMS_diagram}, though the analysis is 
+more generically applicable to other production scenarios.  This analysis
+focuses on SUSY models in which R-parity is conserved forcing the lightest supersymmetric particle (LSP), to 
+be stable weakly interacting, leading to potentially large \ptmiss.  
+
+In general, gluinos and squarks will decay to at least one colored SM particles and the LSP through some number of
+SUSY particles in the form of cascades.  Other SM particles, such as vector bosons or Higgs boson, can be 
+produced in these cascades.  Massive SM boson decay predominantly to hadronic final states.  In particular, 
+the Higgs boson decays predominantly to a pair of b-quarks.  In addition to heavy flavor from Z and Higgs bosons, 
+heavy flavor quarks can come from top and bottom squarks.  These cases are particularly motivated by naturalness 
+arguments, where squarks at least partially cancel the leading contributions of virtual corrections to the 
+Higgs mass from SM particles.  
+
+Given the reasons stated above, final states with high jet and b-jet multiplicities and at least one photon
+are particularly well-motivated by the GMSB symmetry breaking mechanism and naturalness considerations.
+This analysis is an extension of existing single photon analysis previously~\cite{Sirunyan:2017yse}, by taking full advantage
+of \ptmiss, large hadronic activity, and heavy flavor content.  The analysis will search for large \ptmiss events
+in various regions of jet multiplicity and b-jet multiplicity, motivated by several SMS scenarios.  The 
+SM backgrounds are estimated from data control regions with as little reliance on simulations as possible.
+Section~\ref{sec:mc-samples} discusses the SM and signal simulations used in the analysis.
+The triggers used for both the signal and control regions are described in Section~\ref{sec:triggers}.   
+Even selections are detailed in Section~\ref{sec:event-selection}. The background 
+estimation techniques are discussed in Section~\ref{sec:bkgestimation}.  Signal systematic uncertainties are described in Section~\ref{sec:signal-systematics}.
+Finally, results and a description of our statistical modeling of data and the inferred limits are described 
+in Section~\ref{sec:results}.
+
+\section{MC simulation samples}
+\label{sec:mc-samples}
+Monte Carlo simulation is used to design the analysis, to provide input for background
+estimation methods that use data control regions, and to predict event rates from simplified models.
+Simulated SM background processes include jets produced through the strong interaction, 
+referred to as quantum chromodynamics (QCD) multijets,
+\ttjets, \Wjets, \Zjets, \gjets, {\ttg}, {\tg}, and \Vgjets ({\PV} = Z, W).
+The SM background events are generated using the \texttt{MADGRAPH5\_aMC@NLO} v2.2.2 or v2.3.3 
+generator~\cite{Alwall:2014hca,Kalogeropoulos:2018cke,Artoisenet:2012st} at leading order (LO) in perturbative QCD,
+except {\ttg} and {\tg}, which are generated at next-to-leading order (NLO).
+The cross sections used for normalization are computed at NLO or next-to-NLO~\cite{Alwall:2014hca,Czakon:2011xx,Gavin:2012sy,Gavin:2010az}.
+The QCD multijets, diboson ($\PV \gamma$), top quark, and vector boson plus jets events are generated with
+up to two, two, three, and four additional partons in the matrix element calculations, respectively.
+Any duplication of events between pairs of related processes---QCD multijets and \gjets; \ttjets and \ttg; \Wjets and \Wgjets---is removed using generator information.
+
+The NNPDF3.0~\cite{Ball:2014uwa} LO (NLO) parton distribution functions (PDFs) are used for
+samples simulated at LO (NLO).  Parton showering and hadronization are described using the \texttt{PYTHIA} 8.212
+generator~\cite{Sjostrand:2014zea} with the CUETP8M1 underlying event
+tune~\cite{Khachatryan:2015pea}.  Partons generated with \texttt{MADGRAPH5\_aMC@NLO}
+and \texttt{PYTHIA} that would otherwise be counted twice are removed using the MLM~\cite{Alwall:2007fs}
+and \textsc{FxFx}~\cite{Frederix:2012ps} matching schemes in LO and NLO samples, respectively.
+
+Signal samples are simulated at LO using the
+\texttt{MADGRAPH5\_aMC@NLO} generator and their yields are normalized using NLO plus next-to-leading logarithmic (NLL) cross sections~\cite{bib-nlo-nll-01,bib-nlo-nll-02,bib-nlo-nll-03,bib-nlo-nll-04,bib-nlo-nll-05}.
+The decays of gluinos, top squarks, and neutralinos are modeled with \texttt{PYTHIA}.
+
+The detector response to particles produced in the simulated collisions is modeled with the
+\texttt{GEANT4}~\cite{Agostinelli:2002hh} detector simulation package for SM processes. Because of
+the large number of SUSY signals considered, with various gluino, squark, and neutralino masses,
+the detector response for these processes is simulated with the CMS fast simulation~\cite{Abdullin:2011zz,Giammanco:2014bza}.
+The results from the fast simulation generally agree with the results from the full simulation. Where there is disagreement,
+corrections are applied, most notably a correction of up to 10\% to adjust for differences in the modeling of \ptmiss.
+\section{Triggers}
+\label{sec:triggers}
+
+The analysis phase space is partly driven by the availability
+of single photon triggers. We make use of two single photon triggers
+for both the signal region and all control regions.  For the 
+fake-rate background prediction, which relies on extrapolating from
+single electron events, we also make use of single electron
+triggers.  For validating the multijet backgrounds, where \ptmiss 
+is dominated by jet mis-measurement, we make use of a zero 
+photon control region, which is triggered using the inclusive 
+\HT triggers.  
+
+These three triggering strategies and studies of there efficiencies
+are discussed in the following sections. 
+
+\subsection{Signal triggers}
+
+The signal events for are triggered using a logical \texttt{OR} of 
+\texttt{HLT\_Photon90\_CaloIdL\_PFHT600} and \texttt{HLT\_Photon165\_HE10}
+which require either a photon with $\pt>90~\gev$ photon and $\HT>600~\gev$, 
+or a photon with $\pt>165~\gev$ respectively. In addition, photons need 
+to have H/E $<0.10$.  Both 
+of these triggers are seeded by level-1 triggers that are based on 
+energy deposited in the ECal.  The trigger efficiencies are studied using 
+MET dataset by taking \texttt{OR} of inclusive \ptmiss triggers : \texttt{HLT\_PFMET*\_PFMHT*\_IDTight}, where * corresponds to 90, 100, 110 \& 120.
+Efficiency of the trigger is given by\\
+\begin{equation}
+\epsilon = \frac{\text{Events\ passing\ photon\ trigger(s)\ \& MET\ triggers}}{\text{Events\ passing\ MET\ triggers}}
+\end{equation}
+
+Figure~\ref{fig:photon165_eff} shows the efficiency of the \texttt{Photon165} trigger versus \ptg
+for different data-taking eras and for all 2016 data. No conditions are imposed on kinematic variables, except that the events should have at least one 
+photon with $\pt>100~\gev$. This trigger becomes fully efficient for $\ptg>190~\gev$ and has a plateau efficiency
+of 97.6\%. 
+
+\begin{figure}[htbp!]
+  \centering
+  \includegraphics[width=0.48\linewidth]{../Figures/Chap3/triggers/photon165_eff_allEras.pdf}
+  \includegraphics[width=0.48\linewidth]{../Figures/Chap3/triggers/photon165_eff_versusEra.pdf}
+  \captionsetup{width=.9\linewidth}
+  \caption{Efficiency of \texttt{Photon165} trigger versus $\ptg$ for all eras (left) and split by eras (right).}
+  \label{fig:photon165_eff}
+\end{figure}
+
+For measuring the efficiency of the \texttt{Photon90\_PFHT600} trigger as a function of $\ptg$, $\ST>900~\gev$ is used. To measure the efficiency as a function of \ST, $\ptg>100~\gev$ is used. Figure~\ref{fig:photon90_ht600_eff} shows the efficiency of the \texttt{Photon90\_PFHT600} trigger versus
+both $\ptg$, for events with $\ST>900~\gev$ , and versus \ST ($\ptg + \Sigma_{\text{jets}} \pt^{\text{AK4}}$), for events with $\ptg>100~\gev$.  Efficiencies are presented both separated by eras and for all 2016 data combined.  The trigger is fully efficient for $\ST>800~\gev$, but has an inefficiency at high \ST.  
+This inefficiency is ultimately recovered by the \texttt{Photon165} trigger.  The
+\texttt{Photon90\_PFHT600} is found to be fully efficiency for $\ptg>100~\gev$
+for high \ST events. At plateau, the efficiency is $>95\%$ as a function of \ST or $\ptg$.
+
+\begin{figure}[htbp!]
+  \centering
+  \includegraphics[width=0.48\linewidth]{../Figures/Chap3/triggers/photon90_PFHT600_eff_versusPt_allEras.pdf}
+  \includegraphics[width=0.48\linewidth]{../Figures/Chap3/triggers/photon90_PFHT600_eff_versusPt_versusEra.pdf}\\
+  \includegraphics[width=0.48\linewidth]{../Figures/Chap3/triggers/photon90_PFHT600_eff_versusST_allEras.pdf}
+  \includegraphics[width=0.48\linewidth]{../Figures/Chap3/triggers/photon90_PFHT600_eff_versusST_versusEra.pdf}
+  \captionsetup{width=.9\linewidth}
+  \caption{Efficiency of \texttt{Photon90\_PFHT600} trigger versus $\ptg$ (top) and \ST (bottom) for all eras (left) and split by eras (right).}
+  \label{fig:photon90_ht600_eff}
+\end{figure}
+
+The combined efficiency from the \texttt{OR} of the \texttt{Photon165} and 
+\texttt{Photon90\_PFHT600} 
+triggers is shown in Figure~\ref{fig:signalTriggers_OR}. This efficiency is measured by considering events with at least 2 jets and the following condition: (\ST > 500 \& $\ptg>190$) \texttt{OR} ($\ST > 800\ \& \ \ptg>100$).  The average efficiency
+is found to be 98\% with a negligible statistical uncertainty.  The kinematic
+dependence of the efficiency amounts to a roughly 2\% variation and is taken
+as a systematic uncertainty, where relevant.
+
+\begin{figure}[htbp!]
+  \centering
+  \includegraphics[width=0.48\linewidth]{../Figures/Chap3/triggers/signalTriggerEff_ST.pdf}
+  \includegraphics[width=0.48\linewidth]{../Figures/Chap3/triggers/signalTriggerEff_photonPt.pdf}
+  \captionsetup{width=.9\linewidth}
+  \caption{Efficiency of the \texttt{OR} of the \texttt{Photon165} and \texttt{Photon90\_PFHT600} triggers versus \ST (left) and $\ptg$ (right).}
+  \label{fig:signalTriggers_OR}
+\end{figure}
+
+The single (tight) electron control region, used for estimating the fake photon background, 
+is also triggered using a logical OR of the \texttt{Photon165} and \texttt{Photon90\_PFHT600}
+triggers. To ensure that there is no trigger bias in our estimations, we measure
+the trigger efficiency for events with a single tight electron, shown in Figure~\ref{fig:signalTrigger_tightEle}.
+
+\begin{figure}[htbp!]
+  \centering
+  \includegraphics[width=0.48\linewidth]{../Figures/Chap3/triggers/signalRegionTrigger_eff_versusST_tightEle.pdf}
+  \includegraphics[width=0.48\linewidth]{../Figures/Chap3/triggers/signalRegionTrigger_eff_versusPt_tightEle.pdf}
+  \captionsetup{width=.9\linewidth}
+  \caption{Efficiency of the \texttt{OR} of the \texttt{Photon165} and \texttt{Photon90\_PFHT600} versus \ST (left) and $\ptg$ 
+    (right) for events with one tight electron.}
+  \label{fig:signalTrigger_tightEle}
+\end{figure}
+
+\subsection{Multijet triggers}
+
+Events with zero photons are used to validate the multijet background predictions.  These
+events are triggered using an \texttt{OR} of the \texttt{PFHT800} and \texttt{PFHT900} 
+triggers. The former HLT path is used only for the early data taking, and the later was 
+used throughout 2016 data-taking without any prescaling. These triggers are observed to
+be inefficient at high \HT. To recover this inefficiency, a single jet trigger is 
+also included, \texttt{HLT\_CaloJet500\_NoJetID}.
+The efficiency for these triggers is shown in Figure~\ref{fig:zeroPhotonTrigger_eff}, which is 
+measured using events which 
+pass the inclusive \texttt{PFMET*\_PFMHT*\_} triggers.  The efficiency is found to plateau
+for at 98\% for $\HT>1000~\gev$.  The systematic uncertainty on this is taken to be +2\%/-1\%. 
+
+\begin{figure}[htbp!]
+  \centering
+  \includegraphics[width=0.48\linewidth]{../Figures/Chap3/triggers/Run2016_MET_HT800or900_2016H_HT800or900orCaloJet500.pdf}
+  \captionsetup{width=.9\linewidth}
+  \caption{Efficiency of \texttt{HLT\_PFHT800} trigger for eras B-G, and \texttt{HLT\_PFHT900 OR HLT\_CaloJet500\_NoJetID} for era H for zero photon events.}
+  \label{fig:zeroPhotonTrigger_eff}
+\end{figure}
+
+\section{Event selection}
+\label{sec:event-selection}
+The search regions for the analysis require large \ptmiss,
+large \ST, one high energy photon, and no leptons. 
+Jets used in this analysis are reconstructed from charged-hadron 
+subtracted  particle-flow (PF) candidates using the anti-$k_T$ 
+algorithm~\cite{Cacciari:2008gp} with the distance parameter $0.4$. 
+The PF algorithm is used to individually identify and reconstruct all particles
+produced in the collision (PF candidates); namely charged hadrons, photons,
+neutral hadrons, muons, and electrons~\cite{CMS-PRF-14-001}. 
+The following requirements define the baseline selection:
+
+\begin{itemize}
+\item  $\ST>500\ \gev$ for events with $\ptg>190~\gev$,
+ and $\ST>800~\gev$ for events with $\ptg>100~\gev$, where $\ST = \ptg+\sum_{\mathrm{jets}} \pt^{AK4}$.
+The photon reconstruction and identification is described in the following.
+
+\item Photons: 
+Photons are selected using ID criteria described in \ref{sec:photonID}.
+Photon candidates whose supercluster
+is found to be in the pseudorapidity range of $1.44 < |\eta| < 1.56$, which is the EB-EE 
+transition region are not considered.
+Photons are required to have $\pt>100~\gev$
+and $|\eta|<2.5$.
+
+\item AK4PF jets used in this analysis are required to have $\pt>30$ \gev, $|\eta|<2.4$ and pass the loose jet ID requirements \cite{CMS-PAS-JME-16-003}: \\
+  For jets with $|\eta|<2.4$:
+  \begin{itemize}
+  \item neutral hadron fraction $<$ 0.99,
+  \item neutral EM fraction $<$ 0.99,
+  \item number of constituents $>$ 1,
+  \item charged hadron fraction $>$ 0,
+  \item charged multiplicity $>$ 0,
+  \item charged EM fraction $<$ 0.99
+  \end{itemize}
+  Jets that are matched to isolated photons, within $\Delta R<0.3$ are not subject to these requirements.   
+
+\item Tagging of b-jets:
+
+  Although not used for a selection criterion, the number of selected
+  jets satisfying the combined inclusive secondary vertex b-tagging algorithm at the medium working
+  point (CSVv2M $>0.8484$) is used as a discriminating variable \cite{BTV-16-002} and is used for deciding which signal region an event 
+  belongs to.
+
+\item $\ptmiss>200 \gev$ for signal region and the region $100-200$ \gev \ptmiss is used in estimation of \gjets background.
+\item Angular cut:
+  The majority of \gjets and QCD multijet events in our high-\ptmiss search region
+  have jets with undermeasured momenta and thus a spurious
+  momentum imbalance.  A signature of such an event is a jet closely
+  aligned in direction with the \ptmiss vector.  To suppress this background, we reject
+  all events in which either of the two highest-\pt jets lie within 0.3 radians
+  of the \ptmiss vector in the azimuthal coordinate i.e. \dphi(\ptvecmiss, \ptvecjet) $<$ 0.3 for first two leading jets.
+
+\item Muon veto:
+  Muon candidates are selected using
+  medium-ID muon selection \cite{Sirunyan:2018fpa} with the additional
+  requirements:
+  \begin{align}
+    d_{xy}(\mu,\mathrm{PV}) &< 0.2\;\mathrm{cm}\nonumber\\
+    d_{z}(\mu,\mathrm{PV}) &< 0.5\;\mathrm{cm}
+  \end{align}
+
+  Muon candidates are required to have $\pt>10\gev$ and $|\eta|<2.4$.
+  To distinguish between prompt muons and muons from b-hadron
+  decays, muons are required to satisfy an isolation requirement,
+  $I_{\mathrm{mini}}<0.2$, where $I_{\mathrm{mini}}$ is the mini-isolation
+  variable, whose description is similar to the one in \ref{sec:eleID} for electrons.
+ Any event with a muon satisfying all of the  above criteria is vetoed.
+
+\item Electron veto:
+
+  Electron candidates are selected using very loose criteria on its properties, called veto selection.
+  They are required to have $\pt>10\gev$ and $|\eta|<2.5$ and satisfy an isolation
+  requirement of $I_{\mathrm{mini}}<0.1$. Any event with an electron satisfying all of the
+  above criteria is vetoed.
+\item Isolated track vetoes:
+  
+  Following the event selection described above,
+  including the muon and electron event vetoes,
+  there is still some background in the search regions from
+  \ttbar, single-top, and W+jets events with one $W\rightarrow\ell\nu$
+  decay.  In about half these background events, the W boson decays to a $\tau$ lepton
+  and the $\tau$ lepton decays hadronically,
+  while in the other half, an electron or muon is not identified
+  or does not satisfy the criteria for an isolated electron or muon
+  candidate given above.
+  To suppress these backgrounds,
+  we reject events with one or more isolated
+  charged track.
+
+  The requirements for the definition of an isolated track
+  differ slightly depending on whether the track is identified
+  as leptonic or hadronic by the PF algorithm.
+  For leptonic tracks, we require:
+  \begin{itemize}
+  \item $\pt>5\gev$,
+  \item $I_{\mathrm{tk}}<0.2$,
+  \end{itemize}
+  where $I_{\mathrm{tk}}$ is the scalar \pt sum of other
+  charged tracks within $\Delta R\equiv\sqrt{(\Delta\phi)^2+(\Delta\eta)^2}<0.3$ of the primary track, divided
+  by the \pt value of the primary track.
+  For hadronic tracks, we apply slightly tighter requirements:
+  \begin{itemize}
+  \item $\pt>10\gev$,
+  \item $I_{\mathrm{tk}}<0.1$.
+  \end{itemize}
+
+  Isolated tracks are considered only if they satisfy
+  \begin{equation}\label{eq:mt_isotk}
+    m_{T}(\mathrm{tk},\ptmiss) = \sqrt{2p_{T}^{\mathrm{tk}}\ptmiss(1-\cos\Delta\phi)}<100\;\mathrm{GeV},
+  \end{equation}
+  where $p_{T}^{\mathrm{tk}}$ is the transverse momentum of the track and
+  $\Delta\phi$ is the azimuthal separation between the track and \ptvecmiss.
+
+  To reduce the influence of tracks from extraneous pp interactions (pileup),
+  isolated tracks are considered only if their nearest distance of approach
+  along the beam axis to a reconstructed vertex
+  is smaller for the primary event vertex than for any other vertex.
+
+\item Event cleaning:
+
+  We reject events with a jet that satisfies $\pt>30\ \gev$ and
+  $|\eta|<2.4$ if the jet fails the loose jet ID criteria given above.
+  We apply event filters designed to reject events with
+  spurious \ptmiss signals \cite{CMS-PAS-JME-16-004}. 
+  
+  In almost all cases
+  there is a jet matched to a photon within \dR $<0.3$.
+  Since this jet contains photon plus the activity near it, $p_{T}^{\mathrm{jet}} \geq \ptg $.
+  Any event which does not have a jet matched to the leading photon or the matching jet \pt
+  is less than \ptg is also rejected.
+\end{itemize}
+
+\section{SM background and search regions}
+The dominant backgrounds for these high \ptmiss, single photons events typically involve either fake \ptmiss, from $\gamma$-multijet events, or leptonic 
+decays of weak vector bosons, which produce neutrinos.  In electroweak events, photons can either arise from a genuine photon,
+either prompt or non-prompt, or from an electron faking a photon.  While prompt and non-prompt photons are not distinguished
+in this analysis, fakes from electrons are estimated separately.  Since photons can be produced from both simulations of
+matrix elements and parton shower models, via Pythia, MC simulations are often broken up based on whether or not the matrix 
+element includes photons or not. 
+
+Figure~\ref{fig:baselineKineHist} shows the expected distributions of $\ptg$, \ptmiss, \nj, \nb, and \ST  for SM backgrounds and several signal points after the baseline selection mentioned in previous section.
+\begin{figure}[htbp!]
+  \centering
+  
+  \includegraphics[width=0.48\linewidth]{../Figures/Chap3/anaPublic/supp_Sim_BestPhotonPt_T5bbbbZG}
+  \includegraphics[width=0.48\linewidth]{../Figures/Chap3/anaPublic/supp_Sim_MET_T5bbbbZG}
+  \includegraphics[width=0.48\linewidth]{../Figures/Chap3/anaPublic/supp_Sim_nHadJets_T5bbbbZG}
+  \includegraphics[width=0.48\linewidth]{../Figures/Chap3/anaPublic/supp_Sim_nBTags_T5bbbbZG}
+  \includegraphics[width=0.48\linewidth]{../Figures/Chap3/anaPublic/supp_Sim_ST_T5bbbbZG}
+  \captionsetup{width=.9\linewidth}
+  \caption{ Distributions of $\ptg$, \ptmiss, \nj, \nb, and \htg after baseline selection.  Filled, stacked histograms represent SM backgrounds, taken directly from simulation, open histograms show two examples of T5bbbbZG signals, one with a high mass (1750~\gev) NLSP and one with a 
+  low mass (150~\gev) NLSP.  The gluino mass for both signals is 1800~\gev.}
+  \label{fig:baselineKineHist}
+\end{figure}
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.98\linewidth]{../Figures/Chap3/event-selection/SMbackgroundVersusSignalRegion.pdf}
+  \captionsetup{width=.9\linewidth}
+  \caption{ Distributions of events after baseline selection.  Filled, stacked histograms represent SM backgrounds, taken directly from simulation,
+  open histograms show two examples of T5bbbbZG signals, one with a high mass (1750~\gev) NLSP and one with a 
+  low mass (150~\gev) NLSP.  The gluino mass for both signals is 1800~\gev. The lowest \ptmiss bin is not used for 
+  final limit calculations.}
+  \label{fig:baselineEvtYield}
+\end{figure}
+
+Figure~\ref{fig:baselineEvtYield} shows the expected distributions of event yields for SM backgrounds and a few signal model points after the baseline selection. 
+%A cut flow for each background process and two representative signals is shown in Table~\ref{tab:Cutflow}.\\
+The final statistical interpretations are made using 25 independent signal regions. 
+These regions are defined by \nj, \nb, and \ptmiss selections.  Six groups are defined  
+based on \nj and \nb, they are listed in table \ref{tab:SR_bins} along with 6 sideband 
+regions which are used for fake \ptmiss (\gjets and QCD multijet) background. The sideband regions are not used for
+the interpretations.
+Each of these regions, $N^{\text{b-jets}}_{\text{jets}}$, is further divided into 5 \ptmiss regions 
+whose boundaries are defined by, $100<\ptmiss<200$ (sideband), $200<\ptmiss<270$, $270<\ptmiss<350$, $350<\ptmiss<450$, 
+and $\ptmiss>450~\gev$.  In $N^0_{2-4}$ the highest \ptmiss bin is further split such 
+that the highest \ptmiss region corresponds to $\ptmiss>750~\gev$.  
+The first bin in each of the 6 groups in Figure~\ref{fig:baselineEvtYield} corresponds
+to 100 ~\gev $<$ \ptmiss $<$ 200 ~\gev sideband used for estimation of fake \ptmiss background.
+\begin{table}[h]
+\centering
+\caption{Signal region and sideband regions}
+\label{tab:SR_bins}
+\def\arraystretch{1.2}
+\begin{tabular}{c|c|c|c|c}
+\hline  \multirow{2}{*}{\nb}  &  \multirow{2}{*}{\nj} & \multirow{2}{*}{Notation ($N^{\text{b-jets}}_{\text{jets}}$)} &  \multicolumn{2}{c}{Bin number} \\  \cline{4-5}
+                   &           &     &  Sideband  & Signal region \\ \hline
+\multirow{3}{*}{0} & 2-4       & $N^0_{2-4}$    & 1  & 2 - 6        \\ %\cline{2-5}
+                   & 5-6       & $N^0_{5-6}$    & 7  & 8 - 11       \\ %\cline{2-5}
+                   & $\geq 7$  & $N^0_{\geq 7}$ & 12 & 13 - 16       \\ \hline
+\multirow{3}{*}{$\geq 1$} & 2-4      & $N^{\geq 1}_{2-4}$    & 17 & 18 - 21        \\ %\cline{2-5}
+                          & 5-6      & $N^{\geq 1}_{5-6}$    & 22 & 23 - 26 \\ %\cline{2-5}
+                          & $\geq 7$ & $N^{\geq 1}_{\geq 7}$ & 27 & 28 - 31       \\ \hline
+   
+\end{tabular} 
+\end{table}
+
+\subsection{Optimization of search bins}
+The above signal region definitions were optimized by maximizing sensitivity to some of the SMS models shown in Figure~\ref{fig:SMS_diagram}.
+For a given gluino mass if the mass of NLSP is close to mass of gluino mass, then the event has large \ptmiss and soft jets leading to low jet multiplicity. On the other hand, if the mass of NLSP is much less than mass of gluino, then there is small \ptmiss, but large hadronic activity leading to many jets in the final state. To cover both of these scenarios, search region is divided in bins of \nj, \nb and \ptmiss. Adding \nb binning along with \nj and \ptmiss bins gives higher sensitivity if there are any b quarks in the signal model. So these 3 variables are chosen to obtain higher sensitivity. 3 regions are defined based on \nj : 2-4, 5-6 and $\geq$7. These regions can be represented as $N_{2-4}, N_{5-6}, N_{\geq7}$. Each of these regions is subdivided into 3 regions based on \nb : 0, 1 and $\geq$2 (represented as $N^{0}, N^{1}, N^{\geq2}$). This gives total of 9 regions; all these 9 regions are further divided in \ptmiss dimension with the following bin boundaries : 100-120, 120-160, 160-200, 200-270, 270-350, 350-450, $\geq$450. In total there are 63 search bins. This binning can give very good sensitivity, but there will not be enough statistics in the control regions to predict the background. In this analysis, single electron $+\gamma$ control sample (CS), used for lost electron estimation, is one of the smallest control samples. These 63 bins need to be merged in \nj, \nb or \ptmiss to avoid too many bins with 0 CS events; without sacrificing too much on sensitivity. Different ways of merging the bins is studied and for each of them expected exclusion curve is plotted in figure \ref{fig:optCurves} for T5qqqqHG (left) and T5bbbbZG (right) models.
+
+In the legends, numbers shown in subscript refers to \nj and superscript refers to \nb. These 63 bins are represented as $(N_{2-4}, N_{5-6}, N_{\geq7}) \times (N^{0}, N^{1}, N^{\geq2})$ with each of these regions subdivided into 7 \ptmiss bins.
+
+In figure \ref{fig:optCurves}, red curve (corresponding to 63 bins) gives the best exclusion, but it has many bins with low CS events. Next best exclusion is obtained with orange curve which corresponds to 7 \ptmiss bins $\times$ 3 bins in \nj $\times$ 2 bins in \nb. Based on this scenario final search bins are determined. To increase the sensitivity for compressed scenario (mass of gluino is close to mass of NLSP), last \ptmiss bin in $N_{2-4}^{0}$ is further divided into 450-750 and $\geq$750~\gev.
+
+These optimization studies are done based on MC samples, by considering MC statistical uncertainties and additional $20\%$ uncertainty for each bin and for each of the MC samples, including signal samples.
+
+The final search region starts at \ptmiss $\geq$ 200~\gev, whereas in these studies, regions $\geq 100~\gev$ are also considered. This does not affect the optimization, since $100 < \ptmiss < 200~\gev$ region is background enriched and does not contribute to sensitivity.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.48\linewidth]{../Figures/Chap3/optimization/T5qqqqHg_Optimization.pdf}
+\includegraphics[width=0.48\linewidth]{../Figures/Chap3/optimization/T5bbbbZg_Optimization.pdf}
+\captionsetup{width=.9\linewidth}
+\caption{Expected exclusion curves for different types of binning for T5qqqqHG (left) and T5bbbbZG (right). In the legends, subscript $j$ in $N^i_j$ refers to number of jets and superscript $i$ refers to number of b-tagged jets. The red curve corresponds to 63 search bins defined as (\nj = 2-4, 5-6, $\geq 7$) $\times$ (\nb = 0, 1, $\geq2$) $\times$ (7 \ptmiss bins). Other curves are obtained by combining these 63 bins in either \nj or \nb or \ptmiss or any combination of these variables. The final binning of the analysis is based on  orange curve defined as (\nj = 2-4, 5-6, $\geq 7$) $\times$ (\nb = 0, $\geq1$) $\times$ (7 \ptmiss bins).}
+\label{fig:optCurves}
+\end{figure}
+
+\section{Background Estimation}
+\label{sec:bkgestimation}
+\input{Chapters/Chapter3_bkgestimation}
+\input{Chapters/Chapter3_signal-systematics}

@@ -39,7 +39,7 @@ The SM of particle physics consists of 3 generations of quarks and leptons (Tabl
 \label{tab:SM}
 \begin{tabular}{c|c|c|c|c|c}
 \hline
-\multicolumn{6}{c}{Leptons (spin $\frac{1}{2}$)}\\ \hline
+\multicolumn{6}{c}{Leptons (spin \textonehalf)}\\ \hline
 Gen.         & Particle & Charge & Mass (MeV) & Interactions\footnotemark & \textcolor{red}{Chiral state}\\ \hline
 %				   &		  &		   &            &               &\\ \hline
 \multirow{2}{*}{1} & $\nu_e$  &  0     & $<2\times10^{-6}$     & Weak & \multirow{2}{*}{$\begin{bmatrix} \nu_e \\ e_{L}\end{bmatrix},\ e_{R}$}\\
@@ -49,7 +49,7 @@ Gen.         & Particle & Charge & Mass (MeV) & Interactions\footnotemark & \tex
 \multirow{2}{*}{3} & $\nu_\tau$  &  0     & $<18.2$  & Weak & \multirow{2}{*}{$\begin{bmatrix} \nu_\tau \\ \tau_{L}\end{bmatrix},\ \tau_{R}$}\\
 & $\tau$      &	 $\mp1$ & 1777  & EM, Weak      &	\\ \hline
 
-\multicolumn{6}{c}{Quarks (spin $\frac{1}{2}$)}\\ \hline
+\multicolumn{6}{c}{Quarks (spin \textonehalf)}\\ \hline
 Gen.        & Particle & Charge & Mass (MeV) & Interactions & \textcolor{red}{Chiral state}\\ \hline
 \multirow{2}{*}{1} & $u$  &  $\pm\frac{2}{3}$     & $\approx 2.2$     & \multirow{6}{*}{Strong, EM, \newline Weak} & \multirow{2}{*}{$\begin{bmatrix} u_L \\ d_{L}\end{bmatrix},\ u_{R},\ d_R$}\\
  & $d$      &	 $\mp\frac{1}{3}$ & $\approx4.7$  &       &	\\ \cline{1-4} \cline{6-6}
@@ -112,7 +112,7 @@ The theory predicts a spin 0 quanta (particle) associated with the Higgs field. 
 With the discovery of the Higgs (H) boson, the SM is a complete theory which describes many of the experimental observations. The expectations from the SM agree with the experimental observations and Fig.\ref{fig:SigmaNew_v0} shows production cross sections for various SM processes and the measurements by the CMS experiment.
 \begin{figure*}[h]
 \centering
-\includegraphics[width=0.9\linewidth]{../Figures/SigmaNew_v0}
+\includegraphics[width=0.9\linewidth]{../Figures/Chap1/SigmaNew_v0}
 \caption[SM cross section measurements by CMS]{Summary of the cross section measurements of SM processes by CMS experiment \cite{SMxsec}.}
 \label{fig:SigmaNew_v0}
 \end{figure*}
@@ -131,7 +131,7 @@ Although H was the last piece in the SM puzzle and we have discovered it, we are
 where $\lambda_t$ is the top Yukawa coupling ($\sim 1$) and $\Lambda_{UV}$ is the ultraviolet cutoff scale above which SM is not valid and its value is close to GUT (grand unified theory) scale, $10^{16}\gev$ or Planck scale, $> 10^{19}\ \gev$. With these large corrections, the mass of \higgs would have been $> 10^{16}\ \gev$ and not near 125 \gev. This is called hierarchy problem in SM.
 \begin{figure}[h!]
 \centering
-\includegraphics[width=0.35\linewidth]{../Figures/hierarchy_problem_higgs.png}
+\includegraphics[width=0.35\linewidth]{../Figures/Chap1/hierarchy_problem_higgs.png}
 \caption{Top loop diagram contribution to \higgs mass}
 \label{fig:hierarchy_problem_higgs}
 \end{figure}
@@ -140,10 +140,10 @@ where $\lambda_t$ is the top Yukawa coupling ($\sim 1$) and $\Lambda_{UV}$ is th
 \section{Supersymmetric extension of SM}
 To overcome the limitations of SM mentioned in Sec.\ref{SMLimitations}, we need extensions to SM which can address all (or some) of these issues without contradicting existing observations. One such extension is supersymmetry (SUSY) which can address last three issues mentioned above, namely the dark matter problem, gauge coupling unification and hierarchy problem.
 
-To tackle hierarchy problem, if we can introduce a new term in eqn.\ref{eqn:HmassCorr} with similar correction but opposite sign, we might be able to get \higgs mass around 125 \gev. Naively speaking, what SUSY does is exactly this - it introduces a scalar partner for every SM fermion and a fermionic partner for bosonic SM particle and hence the corrections from superpartner loop diagrams cancel the corrections from SM particles. Superpartners of SM particles differ in spin by half a unit. For example, superpartner of top quark is top \textbf{s}quark(or \textbf{s}top) with spin 0. The superpartners of bosons have spin 1/2 and they are named with suffix \textit{ino}, such as gluino, photino etc. Fig.\ref{fig:hierarchy_problem_higgs_mass_stop} shows the contributions to \higgs mass from top loop and stop loop. The contribution from second loop diagram is given by eqn.\ref{eqn:HmassCorrSUSY} which has similar form as eqn.\ref{eqn:HmassCorr} but with an opposite sign.
+To tackle hierarchy problem, if we can introduce a new term in eqn.\ref{eqn:HmassCorr} with similar correction but opposite sign, we might be able to get \higgs mass around 125 \gev. Naively speaking, what SUSY does is exactly this - it introduces a scalar partner for every SM fermion and a fermionic partner for bosonic SM particle and hence the corrections from superpartner loop diagrams cancel the corrections from SM particles. Superpartners of SM particles differ in spin by half a unit. For example, superpartner of top quark is top \textbf{s}quark(or \textbf{s}top) with spin 0. The superpartners of bosons have spin \textonehalf\ and they are named with suffix \textit{ino}, such as gluino, photino etc. Fig.\ref{fig:hierarchy_problem_higgs_mass_stop} shows the contributions to \higgs mass from top loop and stop loop. The contribution from second loop diagram is given by eqn.\ref{eqn:HmassCorrSUSY} which has similar form as eqn.\ref{eqn:HmassCorr} but with an opposite sign.
 \begin{figure*}[h!]
 \centering
-\includegraphics[width=0.8\linewidth]{../Figures/hierarchy_problem_higgs_mass_stop}
+\includegraphics[width=0.8\linewidth]{../Figures/Chap1/hierarchy_problem_higgs_mass_stop}
 \caption{Corrections to \higgs mass from top loop and stop loop.}
 \label{fig:hierarchy_problem_higgs_mass_stop}
 \end{figure*}
@@ -159,7 +159,7 @@ We are interested in minimal supersymmetric extension of SM (MSSM) which is dire
 \caption[Chiral and gauge supermultiplets of MSSM]{Chiral supermultiplets and gauge supermultiplets in the MSSM \cite{Martin:1997ns}}
 \label{tab:SUSY}
 \begin{tabular}{|c|c|c|}
-\hline   & spin 0  & spin 1/2  \\ 
+\hline   & spin 0  & spin \textonehalf  \\ 
 \hline  
 \multirow{3}{*}{squarks, quarks (x3 families)} & ($\tilde{u}_L\ \tilde{d}_L$) & (${u_L}\ {d_L}$) \\ 
 								               & $\tilde{u}_R$				& $u_R$\\
@@ -168,7 +168,7 @@ We are interested in minimal supersymmetric extension of SM (MSSM) which is dire
                       						   & $\tilde{e}_R$				& $e_R$\\ \hline
 \multirow{2}{*}{Higgs, higgsinos}			   & $(H^{+}_u\ H^{0}_u)$       & $(\tilde{H}^{+}_u\ \tilde{H}^{0}_u)$\\
 											   & $(H^{0}_d\ H^{-}_d)$       & $(\tilde{H}^{0}_d\ \tilde{H}^{-}_d)$\\ \hline
-                      						   & spin 1/2					& spin 1 \\ \hline
+                      						   & spin \textonehalf					& spin 1 \\ \hline
                   		gluino, gluon		   & $\tilde{g}$				& $g$ \\
                   		winos, W bosons		   & $\tilde{W}^\pm\ \tilde{W}^0$ & $W^\pm\ W^0$ \\
                   		bino, B boson		   & $\tilde{B}^0$				& $B^0$\\ \hline
@@ -188,9 +188,9 @@ Names	 					&	Spin			&	Gauge eigen states				&	Mass eigen states \\\hline
 \multirow{3}{*}{sleptons}	& \multirow{3}{*}{0}&	\susyP{e}$_L$ \susyP{e}$_R$ \susyP{\nu}$_e$ 			 & same \\
 							&					&	\susyP{\mu}$_L$ \susyP{\mu}$_R$ \susyP{\nu}$_\mu$		 & same \\
 							&					&	\susyP{\tau}$_L$ \susyP{\tau}$_R$ \susyP{\nu}$_\tau$	 &\susyP{\tau}$_1$ \susyP{\tau}$_2$ \susyP{\nu}$_\tau$ \\\hline
-neutralinos & 1/2 & \susyP{B}$^0$ \susyP{W}$^0$ \susyP{H}$^{0}_{u}$ \susyP{H}$^{0}_{d}$ & \susyP{\chi}$^{0}_1$ \susyP{\chi}$^{0}_2$ \susyP{\chi}$^{0}_3$ \susyP{\chi}$^{0}_4$ \\\hline
-charginos & 1/2 & \susyP{W}$^\pm$  \susyP{H}$^{+}_{u}$  \susyP{H}$^{-}_{d}$ & \susyP{\chi}$^{\pm}_1$ \susyP{\chi}$^{\pm}_2$ \\\hline
-gluino 						&	1/2				&	\susyP{g}				&	same \\\hline
+neutralinos & \textonehalf & \susyP{B}$^0$ \susyP{W}$^0$ \susyP{H}$^{0}_{u}$ \susyP{H}$^{0}_{d}$ & \susyP{\chi}$^{0}_1$ \susyP{\chi}$^{0}_2$ \susyP{\chi}$^{0}_3$ \susyP{\chi}$^{0}_4$ \\\hline
+charginos & \textonehalf & \susyP{W}$^\pm$  \susyP{H}$^{+}_{u}$  \susyP{H}$^{-}_{d}$ & \susyP{\chi}$^{\pm}_1$ \susyP{\chi}$^{\pm}_2$ \\\hline
+gluino 						&	\textonehalf				&	\susyP{g}				&	same \\\hline
 Higgs bosons				&	0				& \susyP{H}$^{0}_{u}$ \susyP{H}$^{0}_{d}$ \susyP{H}$^{+}_{u}$  \susyP{H}$^{-}_{d}$ & $h^0$ \higgs$^0$ $A^0$ $H^\pm$ \\\hline
 gravitino	&	3/2	&	\grav	& same \\\hline
 \end{tabular}
@@ -240,7 +240,7 @@ Experimentally, these kind of scenarios can be targeted using collider searches 
 
 \begin{figure*}[h!]
 \centering
-\includegraphics[width=0.8\linewidth]{../Figures/NLSPwinoBinoBR}
+\includegraphics[width=0.8\linewidth]{../Figures/Chap1/NLSPwinoBinoBR}
 \caption[BR for bino and neutral wino NLSP decays]{BR for bino and neutral wino NLSP decays. Plot is taken from Ref.\cite{Ruderman:2011vv}}
 \label{fig:NLSPwinoBinoBR}
 \end{figure*}
@@ -267,11 +267,11 @@ In the T5qqqqHG model, each gluino decays to a pair of light-flavored quarks (\q
 
 \begin{figure*}[htb]
 \centering
-\includegraphics[width=0.4\linewidth]{../Figures/Figure_001-a.pdf}\hspace{0.05\linewidth}
-\includegraphics[width=0.4\linewidth]{../Figures/Figure_001-b.pdf}\\
+\includegraphics[width=0.4\linewidth]{../Figures/Chap1/Figure_001-a.pdf}\hspace{0.05\linewidth}
+\includegraphics[width=0.4\linewidth]{../Figures/Chap1/Figure_001-b.pdf}\\
 \vspace{1.0cm}
-\includegraphics[width=0.4\linewidth]{../Figures/Figure_001-c.pdf}\hspace{0.05\linewidth}
-\includegraphics[width=0.4\linewidth]{../Figures/Figure_001-d.pdf}
+\includegraphics[width=0.4\linewidth]{../Figures/Chap1/Figure_001-c.pdf}\hspace{0.05\linewidth}
+\includegraphics[width=0.4\linewidth]{../Figures/Chap1/Figure_001-d.pdf}
 \caption[SMS diagrams]{Example diagrams depicting the simplified models used, which are defined in the text. The top left diagram depicts the T5qqqqHG model, the top right diagram depicts the T5bbbbZG model, the bottom left diagram depicts the T5ttttZG model, and the bottom right depicts the T6ttZG model.}
 \label{fig:SMS_diagram}
 \end{figure*}

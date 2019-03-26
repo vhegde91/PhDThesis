@@ -513,24 +513,60 @@ KOMA-script documentation for details.}]{fancyhdr}
 	\addtocounter{table}{-1}% Don't count this table as one of the document tables
 	\ifbool{nolistspace}{\endgroup}{}
 }
-\newcommand{\GeV}{$\text{Ge\hspace{-.08em}V}$ }
+\newcommand{\GeV}{\text{GeV}\xspace}
 \newcommand{\gev}{\GeV}
-\newcommand{\fbinv}{$\text{fb}^{-1}$ }
+\newcommand{\dR}{\ensuremath{\Delta R}}
+\newcommand{\fbinv}{\ensuremath{\text{fb}^{-1}} }
+\newcommand{\pbinv}{\ensuremath{\text{pb}^{-1}}\xspace}
 \newcommand{\higgs}{$\text{H}\ $}
 \newcommand{\susyP}[1]{\ensuremath{\tilde{#1}}}
-\newcommand{\ptmiss}{\ensuremath{p_{T}^{miss}}}
+\newcommand{\ptmiss}{\ensuremath{p_{T}^{miss}}\xspace}
 \newcommand{\cPqu}{u}
 \newcommand{\cPqd}{d}
 \newcommand{\cPqs}{s}
 \newcommand{\cPqc}{c}
 \newcommand{\cPqb}{b}
 \newcommand{\cPqt}{t}
-\newcommand{\qqbar}{q$\bar{\mathrm{q}}$}
-\newcommand{\bbbar}{b$\bar{\mathrm{b}}$}
-\newcommand{\ttbar}{t$\bar{\mathrm{t}}$}
+\newcommand{\qqbar}{\ensuremath{\mathrm{q}\bar{\mathrm{q}}}}
+\newcommand{\bbbar}{\ensuremath{\mathrm{b}\bar{\mathrm{b}}}}
+\newcommand{\ttbar}{\ensuremath{\mathrm{t}\bar{\mathrm{t}}}}
 \newcommand{\nuone}{\ensuremath{\tilde{\chi}_{1}^0} }
 \newcommand{\chone}{\ensuremath{\tilde{\chi}_{1}^\pm} }
 \newcommand{\grav}{\ensuremath{\tilde{\mathrm{G}}} }
+\newcommand{\lumi}{\ensuremath{\mathcal{L}}}
+\newcommand{\ratiosl}{\ensuremath{\mathrm{R}_{\mathrm{S/L}}}\xspace}
+\newcommand{\elong}{\ensuremath{\mathrm{E}_{\mathrm{Long}}}\xspace}
+\newcommand{\eshort}{\ensuremath{\mathrm{E}_{\mathrm{Short}}}\xspace}
+\newcommand{\lint}{\ensuremath{\mathcal{L}}\xspace}
+\newcommand{\nb}{\ensuremath{N_{\text{b-jets}}}\xspace}
+\newcommand{\mt}{\ensuremath{m_{\text{T}}}\xspace}
+\newcommand{\HT}{\ensuremath{H_{\text{T}}}\xspace}
+\newcommand{\htg}{\ensuremath{\HT^{\gamma}}\xspace}
+\newcommand{\ST}{\ensuremath{\htg}\xspace}
+\newcommand{\HTg}{\ensuremath{\htg}}
+\newcommand{\ptg}{\ensuremath{\pt^{\gamma}}\xspace}
+\newcommand{\nj}{\ensuremath{N_{\text{jets}}}\xspace} 
+\newcommand{\njb}{\ensuremath{N_{\mathrm{j}}^{\mathrm{b}}}\xspace}
+\newcommand{\dphi}{\ensuremath{\Delta \phi}\xspace}
+\newcommand{\gjets}{\ensuremath{\gamma+\mathrm{jets}}\xspace}
+\newcommand{\ptvecjet}{\ensuremath{{\vec p}_{\mathrm{T}}^{\kern1pt\text{jet}}}\xspace}
+\newcommand{\ptvecmiss}{\ensuremath{\vec{p_{T}}^{miss}}}
+\newcommand{\Wg}{\ensuremath{\PW{\gamma}}\xspace}
+\newcommand{\ttg}{\ensuremath{\ttbar{\gamma}}\xspace}
+\newcommand{\tg}{\ensuremath{\mathrm{t}\gamma}\xspace}
+\newcommand{\Wgjets}{W\gjets}
+\newcommand{\PV}{\ensuremath{V}\xspace}
+\newcommand{\Vgjets}{{\PV}\gjets}
+\newcommand{\ttjets}{{\ttbar}+jets\xspace}
+\newcommand{\Wjets}{W+jets\xspace}
+\newcommand{\Zjets}{Z+jets\xspace}
+\newcommand{\tauh}{\ensuremath{\tau_{\mathrm{had}}}}
+\newcommand{\mnlsp}{\ensuremath{m_{\tilde{\chi}_{1}^{0}}}\xspace}
+\newcommand{\mgluino}{\ensuremath{m_{\tilde{g}}}\xspace}
+\newcommand{\mstop}{\ensuremath{m_{\tilde{t}}}\xspace}
+\newcommand{\PXXSG}{\ensuremath{\tilde{G}}\xspace}
+\newcommand{\PSGczDo}{\ensuremath{\tilde{\chi}_{1}^{0}}\xspace}
+\newcommand{\PSGczDq}{\ensuremath{\tilde{\chi}_{1}^{\pm}}\xspace}
 %----------------------------------------------------------------------------------------
 
 \ifbool{hyperrefsupport}{% If the nohyperref class option has not been specified

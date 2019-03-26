@@ -1,0 +1,62 @@
+In order to have a robust background prediction over all analysis bins, it is 
+necessary to individually estimate the various background components since 
+the composition is expected to vary dramatically in various bins (Figure \ref{fig:supp_Sim_Pie_lowMET}).
+Low \ptmiss regions have more \gjets background, high \ptmiss regions with low \nj or \nb
+is dominated by processes involving Z or W, and the high \ptmiss, high \nj, high \nb region is
+mainly \ttjets or \ttg dominated.
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.48\linewidth]{../Figures/Chap3/anaPublic/supp_Sim_Pie_lowMET}
+\includegraphics[width=0.48\linewidth]{../Figures/Chap3/anaPublic/supp_Sim_Pie}
+\captionsetup{width=.9\linewidth}
+\caption[Pie charts showing BG in low \ptmiss]{Pie charts showing relative background composition in various \nj and \nb regions for \ptmiss of 200 - 350 \gev on left and $\ptmiss\geq 350$ \gev on right.}
+\label{fig:supp_Sim_Pie_lowMET}
+\end{figure}
+
+There are four main sources of background events:  events with a lost lepton (lost e/$\mu$) or a hadronically 
+decaying tau leptons, events in which an electron from a $W\rightarrow e \nu$ decay fakes a photon,
+$Z\rightarrow \nu \bar{\nu}$ events produced in association with a $\gamma$, and fake \ptmiss events. 
+
+The lost lepton background arises from events in which the charged lepton
+from a leptonically decaying W, produced directly or from the decay of 
+a top quark, fails to be identified by being out of acceptance, 
+or failing the identification or isolation requirements.  For example, in events
+with high \pt top quarks, the top quark decay products will be collimated, forcing the b-jet
+to be closer to the charged lepton.  In these cases, events are more likely to 
+fail the isolation requirements.  These events are estimated by studying events
+with both a  well-identified photon and lepton ($e/\mu$) in both data and simulation.  
+
+The hadronic-$\tau$ background arises from events in which $\tau$ leptons from 
+W decays decay to mesons and neutrinos, which occurs $\sim 65\%$ of the time.  
+Due to lepton universality, the fraction of hadronically decaying $\tau$ events 
+can be estimated from single muon after correcting for reconstruction differences
+and for the hadronic-$\tau$ branching fraction.  
+
+Fake photon events primarily arise from electrons from W decays faking 
+photons.  This can happen when a pixel seed fails to be associated with
+the photon candidate.  Given a fake rate, which relates events with well-identified
+electrons with events with well-identified photons, the fake photon background
+can be estimated from a single electron (zero photon) control region.  The 
+fake rate will be estimated in MC and data/MC corrections are studied to 
+account for any MC mismodeling.
+
+Invisible Z decays constitute a major background for low \nb or \nj multiplicity, high 
+\ptmiss events.  These events have a natural counter part, Z($\mu\mu$) and Z(ee)
+events, which can be studied in both data and MC to predict the Z($\nu\nu$) 
+contribution.
+
+Fake \ptmiss events occur primarily in events with a single photon and jets, 
+where one of the jets' energy is mismeasured.  These events primarily
+contribute to the low \ptmiss phase space.  These events are greatly reduced
+by requiring events to have a large angle, in the transverse plane, between
+\ptmiss and the leading and subleading jets, $\dphi>0.3$.  There are several control 
+regions that will be used to estimate these events, events with zero photons, 
+events with a photon, but after inverting the $\dphi$ cuts, 
+finally, the whole method will be anchored to the high $\dphi$, photon
+signal region with low \ptmiss. Region \dphi(\ptvecmiss, \ptvecjet) $>$ 0.3 for first two leading jets is defined as
+high \dphi and low \dphi is the region with does not pass this criteria (one of the jets or both of the jets are aligned, \dphi$<$0.3, with \ptmiss).
+
+\input{Chapters/Chaper3_lostLepton}
+\input{Chapters/Chapter3_fakeRateEst}
+\input{Chapters/Chapter3_zinv}
+\input{Chapters/Chapter3_qcdmultijet}

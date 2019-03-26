@@ -1,0 +1,68 @@
+\section{Systematic uncertainty for signal models}
+\label{sec:signal-systematics}
+We consider a variety of experimental and theoretical systematic uncertainties on the signal rates. They are:
+\begin{itemize}
+\item {\bf Luminosity:} A flat uncertainty of 2.5\% is used.
+\item {\bf Isolated track veto:} A flat uncertainty of 2\% is assigned to the 
+T5ttttZG, T5bbbbZG, T5qqqqHG and T6ttZG signal samples to account for any data/MC 
+differences.
+%The uncertainty is negligible for the other signal models that are not expected to contain prompt leptons or isolated tracks.
+\item {\bf PF Jet ID:} Some of the PF Jet ID criteria, defined in Section \ref{sec:event-selection}, are not well-modeled in the fast simulation. Therefore, the jet ID criteria are not applied to the fast simulation samples. The efficiency of the event cleaning cut on the signal samples is expected to be ${>}99\%$ from the full simulation, so corrections are not needed. The uncertainty in this correction is taken to be a flat 1\% uncertainty.
+\item {\bf \cPqb-tag efficiency:} The \cPqb-tagging and mistagging scale factors are functions of the jet \pt and $\eta$.
+The scale factors are varied by their
+uncertainties and these variations are propagated as migrations between the different signal bins, with no effect on the overall signal efficiency. The \cPqb-tagging,
+charm-mistagging, and light flavor-mistagging scale factors are varied independently.
+\item {\bf \cPqb-tag FastSim corrections:} The \cPqb-tagging and mistagging performance in the fast simulation must be corrected to match the full
+simulation. Separate correction factors are derived for \cPqb-jets, \cPqc-jets, and light flavor jets, as functions of the jet \pt and $\eta$. As with the scale factors above, the correction factors for each type of jet are varied independently by their uncertainties
+and these variations are propagated as migrations between the different signal bins.
+
+\item {\bf Jet Energy Corrections:} The jet energy corrections (JECs) are varied using the \pt-
+and $\eta$-dependent jet energy scale uncertainties, with a separate set of corrections for the fast simulation samples.
+These variations are propagated into the various jet-dependent variables, including: \nj, \nb, \ptmiss, $\dphi(jet,\ptmiss)$ and \ST.
+The effect is 5\% or less.
+\item {\bf Jet Energy Resolution:} Simulated jet momenta are smeared to match that in data, and the smearing factors are varied according to uncertainties on the jet energy resolution measurements. These variations are propagated into the various jet-dependent variables, including \nj, \nb, \ptmiss, $\dphi(jet,\ptmiss)$ and \ST. The overall effect is 2\%.
+\item {\bf \ptmiss Uncertainty :} Mainly special treatment of \ptmiss modeling in FastSim, and is expected to be important only in compressed regions. The signal yields are obtained using GenMET, summing all visible generator-level particles, and PFMET and average of the GenMET and PFMET is taken as central value.  A flat uncertainty equal to one-half the difference between the GenMET and PFMET, fully correlated among \ptmiss bins is used for limit settings. This procedure results in less than a few percent uncertainty in non-compressed and $<10\%$ uncertainties in highly compressed regions.
+\item {\bf ISR:} An ISR correction is derived from \ttbar events, with a selection requiring two leptons (electrons or muons) and two b-tagged jets, implying that any other jets in the event arise from ISR.
+The correction factors are 1.000, 0.920, 0.821, 0.715, 0.662, 0.561, 0.511 for \nj-ISR$ = 0,1,2,3,4,5,6{+}$.
+For signal samples, number of ISR jets is the number of jets which are not originating from decay of gluino or vector boson or Higgs or top.
+The corrections are applied to the simulated signal samples with an additional normalization factor, typically ${\sim}1.15$ (depending on the signal model),
+to ensure the overall cross section of the sample remains constant.
+The systematic uncertainty in these corrections is chosen to be half of the deviation from unity for each correction factor.
+The effect on the yield ranges from $4-30\%$, with the largest effect for compressed signal models. This is the most dominant uncertainty for the signal models which populate high \nj bins.
+\end{itemize}
+
+Following theoretical uncertainties are evaluated for each signal model point or explained otherwise. 
+\begin{itemize}
+\item {\bf Scales:} The uncertainty is calculated using the envelope of the weights from varying the renormalization and factorization scales, $\mu_{\text{R}}$ and $\mu_{\text{F}}$,
+by a factor of 2 \cite{Cacciari:2003fi,Catani:2003zt}. The effect on the yield is 2\%.
+\item {\bf PDFs:} The LHC4PDF prescription for the uncertainty on the total cross section is included as $\pm1$ sigma bands in the results plots. No additional uncertainty is considered for the uncertainty in the acceptance due to PDFs.
+\end{itemize}
+
+Table \ref{tab:signalSyst} summarizes the various uncertainties, the range of their impact on signal yields and modeling of the correlations.
+
+\begin{table}[h!]
+\centering
+\caption{Systematic uncertainties for signal samples}
+\label{tab:signalSyst}
+%\begin{tabular}{p{3cm}|c|p{5cm}}
+\begin{tabular}{p{0.25\linewidth}|c|p{0.4\linewidth}}
+\hline
+Type of uncertainty     &   Magnitude   &  Correlation modeling \\ \hline \hline
+MC stats                &   $1-70\%$    &  \multirow{3}{*}{Uncorr. across all bins} \\
+JEC, JER                &   $5\%, 2\%$  & \\
+Iso-track veto          &   $2\%$       & \\ 
+PF jet ID               &   $     1\%$  & \\ \hline
+\multirow{2}{*}{b-tag SF}& \multirow{2}{*}{$5\%$ in high stat bins}& Corr. across bins of same b-tag
+and anti-corr. across bins of different b-tag \\ \hline
+ISR re-weighting        &   $4 - 30\%$      & \multirow{2}{*}{Corr. across same \nj bins}\\
+$\mu_{\text{R}}$ and $\mu_{\text{F}}$ scales&$2\%$&\\ \hline
+GenMET vs PFMET&$<10\%$& Corr. across \ptmiss bins \\ \hline
+Trigger efficiency&$2\%$& Corr. across all bins\\ \hline
+\end{tabular} 
+\end{table}
+
+Additionally, the effect of potential signal contamination in the $e+\gamma$ and $\mu+\gamma$ control regions is considered. 
+If some events observed in the control regions are in fact due to a SUSY signal, the corresponding
+background prediction in the signal region will be too high. This effect is dealt with in the
+analysis by a corresponding reduction in the effective efficiency for the signal point. For the
+T5ttttZG signal, the size of this reduction of effective signal efficiency is about 10\% coming from $\mu+\gamma$ control region and 5\% coming from $e+\gamma$ control region. For $e+\gamma$, effect of signal contamination is small as compared to $\mu+\gamma$, since transfer factor for lost electron is smaller than lost $\mu+\tau_{\text{had}}$ transfer factor. In the case of T6ttZG model, signal contamination is about 5\% for $\mu+\gamma$ and 2.5\% for $e+\gamma$. For other SMS that are considered in the analysis signal contamination is negligible.
