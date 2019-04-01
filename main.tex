@@ -56,11 +56,12 @@ headsepline, % Uncomment to get a line under the header
 \usepackage[version=3]{mhchem}
 \usepackage{wasysym}
 \usepackage{textcomp}
+%\usepackage{cellspace}
+%\setlength\cellspacetoplimit{6pt}
 
 %\usepackage[backend=bibtex,style=authoryear,natbib=true]{biblatex} % Use the bibtex backend with the authoryear citation style (which resembles APA)
-\usepackage[backend=bibtex,firstinits=true]{biblatex}
+\usepackage[backend=bibtex,firstinits=true,sorting=none]{biblatex}
 \bibliography{main.bib}
-
 %\addbibresource{main.bib} % The filename of the bibliography
 
 \usepackage[autostyle=true]{csquotes} % Required to generate language-dependent quotes in the bibliography
@@ -194,8 +195,22 @@ headsepline, % Uncomment to get a line under the header
 %----------------------------------------------------------------------------------------
 \begin{abstract}
 \addchaptertocentry{\abstractname} % Add the abstract to the table of contents
-A search for supersymmetry is presented based on events with at least one photon, jets, and large missing transverse momentum produced in proton-proton collisions at a center-of-mass energy of 13 TeV. The data correspond to an integrated luminosity of 35.9 \fbinv and were recorded at the LHC with the CMS detector in 2016. The analysis characterizes signal-like events by categorizing the data into various
-signal regions based on the number of jets, the number of {\cPqb}-tagged jets, and the missing transverse momentum. No significant excess of events is observed with respect to the expectations from standard model processes. Limits are placed on the gluino and top squark pair production cross sections using several simplified models of supersymmetric particle production with gauge-mediated supersymmetry breaking. Depending on the model and the mass of the next-to-lightest supersymmetric particle, the production of gluinos with masses as large as 2120 \gev and the production of top squarks with masses as large as 1230 \gev are excluded at 95\% confidence level.
+Although many of the experimental observations can be theoretically well explained using standard model (SM) of particle physics, SM is
+not a complete theory. The SM is incomplete because it does not explain gravity, dark matter and dark energy in the universe,
+matter-antimatter asymmetry, nonzero neutrino mass, observed mass of the Higgs boson being much lower than theoretically favored value etc.
+Supersymmetry (SUSY) is a well motivated theoretical extension of the SM which can address some of the issues in SM such as, Higgs mass 
+problem and dark matter problem. In SUSY, every SM particle has a superpartner whose spin differs by half a unit. The masses of 
+superpartners are not equal to the SM counterparts which makes SUSY a broken symmetry. There are several ways to break this symmetry and
+one of the ways is gauge mediated SUSY breaking (GMSB). If GMSB is realized in nature, it typically results in events with photon in the 
+final state. A search for SUSY is presented based on events with at least one photon, jets, and
+large missing transverse momentum produced in proton-proton collisions at a center-of-mass energy of 13 TeV. The data correspond to an 
+integrated luminosity of 35.9 \fbinv and were recorded at the LHC with the CMS detector in 2016. The analysis characterizes signal-like 
+events by categorizing the data into various signal regions based on the number of jets, the number of {\cPqb}-tagged jets, and the
+missing transverse momentum. No significant excess of events is observed with respect to the expectations from standard model processes. 
+Limits are placed on the gluino and top squark pair production cross sections using several simplified models of supersymmetric particle 
+production with GMSB scenario. Depending on the model and the mass of the next-to-lightest supersymmetric 
+particle, the production of gluinos with masses as large as 2120 \gev and the production of top squarks with masses as large as 1230 \gev 
+are excluded at 95\% confidence level.
 
 \end{abstract}
 

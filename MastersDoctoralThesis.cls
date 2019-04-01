@@ -513,6 +513,8 @@ KOMA-script documentation for details.}]{fancyhdr}
 	\addtocounter{table}{-1}% Don't count this table as one of the document tables
 	\ifbool{nolistspace}{\endgroup}{}
 }
+\newcommand{\topMargin}{\rule{0pt}{2.6ex}}       % Top strut
+\newcommand{\botMargin}{\rule[-1.2ex]{0pt}{0pt}} % Bottom strut
 \newcommand{\GeV}{\text{GeV}\xspace}
 \newcommand{\gev}{\GeV}
 \newcommand{\dR}{\ensuremath{\Delta R}}
