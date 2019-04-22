@@ -3,17 +3,17 @@
 \section{Results \& statistical interpretations}
 \label{sec:results}
 
-The background predictions described in Section~\ref{sec:bkgestimation} are 
-summed together for the final statistical SMS interpretations. Each analysis
-bin is represented as a individual counting experiment with one 
+The background predictions obtained in Section~\ref{sec:bkgestimation}
+and the observed data are used for interpretation in the context of SMS models shown in Figure \ref{fig:SMS_diagram}. 
+Each analysis bin is represented as a individual counting experiment with one 
 signal process and five background processes.  Each process is assumed 
 to be a Poisson distribution with some number of prior distribution representing
 the uncertainty on the corresponding process's rate parameter. The exact
 details of how these uncertainties are modeled depends on the 
 details of each of the background estimation methods that were used. 
 
-In general, each background estimation is a scaling of a Poisson process 
-from a control region, $N^{\mathrm{pred}}_{\mathrm{bkg}}=N^{\mathrm{pred}}_{\mathrm{CR}}\beta$, where $\beta$ 
+In general, each background estimation is a scaling of a control region,
+$N^{\mathrm{pred}}_{\mathrm{bkg}}=N^{\mathrm{pred}}_{\mathrm{CR}}\beta$, where $\beta$ 
 is the transfer factor, $N^{\mathrm{pred}}_{\mathrm{CR}}$ is the expected yield in the 
 control region of the corresponding process, and $N^{\mathrm{pred}}_{\mathrm{bkg}}$ is the 
 prediction provided as the expected mean of the corresponding process's
@@ -34,9 +34,9 @@ as the prior and can be used to constrain both the predicted background the
 signal strength in the signal region with the proper modeling of the $N^{\mathrm{pred}}_{\mathrm{bkg}}$ 
 uncertainty due to limited statistics of the control region observed yield.
 
-As such, we modeling the uncertainty on the prediction due to limited 
+As such, we model the uncertainty on the prediction due to limited 
 control region statistics as a gamma distribution.  This procedure is followed, especially when the 
-observed control region statistics are too small to justifying a Gaussian 
+observed control region statistics are too small to justify a Gaussian 
 approximation.  While the observed control region events vary considerably, 
 for the signal regions in extreme corners of our phase space the use of a 
 Gamma prior distribution is critical for modeling uncertainties.  For uniformity, 
@@ -64,7 +64,7 @@ shape parameter set to the observed number of events in the corresponding
 $\ell-\gamma$ control region and the scale parameter is set to be the
 average transfer factor, given in Table~\ref{tab:lost_lepton_SF}.  There 
 are also log-normal prior distributions used to model the uncertainties
-of the transfer factors, which account for:
+of the transfer factors, which account for the following sources:
 
 \begin{itemize}
  \item limited MC statistics; the corresponding nuisance parameters are fully uncorrelated.
@@ -94,7 +94,7 @@ purity-corrected MC transfer factor, which in the nomenclature of
 Equation~\ref{eq:zgamma} is 
 $\beta\cdot N_{\nu\nu+\gamma}^{\mathrm{MC}}/N_{\ell\ell+\gamma}^{\mathrm{MC}}$.
 Additional log-normal prior distributions are included to account 
-for
+for the following factors:
 \begin{itemize}
  \item the effect of limited MC statistics on $N_{X+\gamma}^{\mathrm{MC}}$; the corresponding nuisance parameters are fully uncorrelated across all signal regions;
  \item uncertainties on the purity; the corresponding nuisance parameter fully correlates the effect across all signal regions.
@@ -141,8 +141,8 @@ them with respect to the observed yields while fixing the signal strength to
 zero.
 
 The predicted background and observed yields are shown in Table~\ref{tab:finalPrediction} and Fig.~\ref{fig:summaryPlot}.
-The largest deviation is found in bin 2 ($2\leq\nj\leq 4$, $\nb=0$, and $270<\ptmiss<350\ \gev$), where the background is predicted to be 91 events
-with 51 events observed.
+The largest deviation is found in bin 2 ($2\leq\nj\leq 4$, $\nb=0$, and $270<\ptmiss<350\ \gev$), where the background is predicted to be 
+91 events with 51 events observed.
 The local significance of this single bin was computed to be around 2 standard deviations below the SM expectation.
 This calculation does not account for the look-elsewhere effect associated with the use of 25 exclusive signal regions,
 which is expected to reduce this significance.
@@ -152,7 +152,7 @@ The observations in all other bins are consistent with the SM expectations withi
 \tiny
 %\renewcommand{\arraystretch}{1.25}
 \centering
-\caption{Predicted and observed event yields for each of the 25 exclusive signal regions.}
+\caption[Results: Prediction vs observation]{Predicted and observed event yields for each of the 25 exclusive signal regions.}
 \label{tab:finalPrediction}
 \begin{tabular}{cccccccccc}
 \nj      & \nb& \ptmiss [GeV]& Lost e              & Lost $\mu$ + \tauh & Misid. $\gamma$   & Z$(\nu\bar{\nu})\gamma$                & \gjets            & Total                 & Data \\
@@ -193,7 +193,7 @@ ${\geq}7$& ${\geq}1$  & ${>}450$     & $0.36_{-0.36}^{+0.37}$& $0.0_{-0.0}^{+1.2
 \centering
 \includegraphics[width=0.99\linewidth]{../Figures/Chap4/Figure_004.pdf}
 \captionsetup{width=.95\linewidth}
-\caption{Observed numbers of events and predicted numbers of events from the various SM backgrounds in the 25 signal regions.
+\caption[Results: Prediction vs observation in 25 search bins]{Observed numbers of events and predicted numbers of events from the various SM backgrounds in the 25 signal regions.
 The categories, denoted by vertical lines, are labeled as \njb,
 where j refers to the number of jets and b refers to the number of {\cPqb}-tagged jets.
 The numbered bins within each category are the various \ptmiss bins, as defined in Table~\ref{tab:finalPrediction}. The lower panel
@@ -229,7 +229,7 @@ T5ttttZG, and T6ttZG, are shown in Fig.~\ref{fig:exclusions}.
 \includegraphics[width=0.48\linewidth]{../Figures/Chap4/Figure_005-c.pdf}
 \includegraphics[width=0.48\linewidth]{../Figures/Chap4/Figure_005-d.pdf}
 \captionsetup{width=.95\linewidth}
-\caption{Observed and expected 95\% CL upper limits for gluino or top squark pair production cross sections
+\caption[Exclusions for strong SMS models]{Observed and expected 95\% CL upper limits for gluino or top squark pair production cross sections
 for the T5qqqqHG (upper left), T5bbbbZG (upper right), T5ttttZG (bottom left), and T6ttZG
 (bottom right) models. Black lines denote the
 observed exclusion limit and the uncertainty due to variations of the
@@ -346,8 +346,8 @@ which is very disadvantageous for EWKino production models. One possible way to 
 \ptg or \ptmiss threshold.
 
 During run 2 (year 2016-2018), CMS has collected more than 135 \fbinv of data and this is going to be an advantage for EW SUSY
-searches. A combination of several searches with photons is performed by CMS using 2016 data \textcolor{red}{Add ref for GGM PAS}.
+searches. A combination of several searches with photons is performed by CMS using 2016 data \cite{CMS-PAS-SUS-18-005}.
 This combination uses photon + \ST search \cite{Sirunyan:2017yse}, EW search \cite{Sirunyan:2017nyt}, photon + lepton search
-\cite{Sirunyan:2018psa} and diphoton search \textcolor{red}{Add ref for diphoton PAS}. Since this search has very good sensitivity 
+\cite{Sirunyan:2018psa} and diphoton search \cite{Sirunyan:2019mbp}. Since this search has very good sensitivity 
 for strong SUSY production models, and if one performs further optimization the search for EW SUSY models, this search is going to play
 a significant role on the path to discovery or to constrain SUSY models.

@@ -201,8 +201,8 @@ matter-antimatter asymmetry, nonzero neutrino mass, observed mass of the Higgs b
 Supersymmetry (SUSY) is a well motivated theoretical extension of the SM which can address some of the issues in SM such as, Higgs mass 
 problem and dark matter problem. In SUSY, every SM particle has a superpartner whose spin differs by half a unit. The masses of 
 superpartners are not equal to the SM counterparts which makes SUSY a broken symmetry. There are several ways to break this symmetry and
-one of the ways is gauge mediated SUSY breaking (GMSB). If GMSB is realized in nature, it typically results in events with photon in the 
-final state. A search for SUSY is presented based on events with at least one photon, jets, and
+one of the ways is gauge mediated SUSY breaking (GMSB). If GMSB is realized in nature, it typically results in events with one or more 
+photons in the final state. A search for SUSY is presented based on events with at least one photon, jets, and
 large missing transverse momentum produced in proton-proton collisions at a center-of-mass energy of 13 TeV. The data correspond to an 
 integrated luminosity of 35.9 \fbinv and were recorded at the LHC with the CMS detector in 2016. The analysis characterizes signal-like 
 events by categorizing the data into various signal regions based on the number of jets, the number of {\cPqb}-tagged jets, and the
@@ -220,7 +220,40 @@ are excluded at 95\% confidence level.
 
 \begin{acknowledgements}
 \addchaptertocentry{\acknowledgementname} % Add the acknowledgements to the table of contents
-The acknowledgments and the people to thank go here, don't forget to include your project advisor\ldots
+My heartfelt gratitude to my supervisor Dr. Seema Sharma for her valuable guidance throughout the project.
+She has allowed me to explore new ideas and provided a lot of opportunities to interact with many experts in the field.
+I am very thankful to her for her valuable advises and helping me all these years of my PhD.
+
+Dr. Andrew Whitbeck has played very significant role in making this a successful journey.
+His experience, skills and physics ideas were of great help during the project. I am grateful to him for his invaluable support.
+
+I also would like to thank Dr. Gobinda Majumder for his help during early days of my PhD.
+The calorimeter work I did with him was very useful in understanding the experimental setup and many of the technical details.
+
+The research advisory committee (RAC) members Dr. Sourabh Dube \& Dr. Monoranjan Guchait have provided me regular feedback.
+I am very thankful to them for their inputs to this project.
+
+I am grateful to Dr. Kevin Pedro for all the technical help and editorial work on various documents related to this work.
+
+My thanks to Dr. Giovanni Zevi Della Porta for helping me to understand electron and photon identification at CMS in a better way.
+
+I also extend my gratitude to Dr. Rishi Patel, Dr. James Francis Hirschauer, conveners of SUSY photon group and SUSY group at
+CMS, Prof. Meenakshi Narain and other analysis review committee members for reviewing the work and providing valuable suggestions.
+
+My special thanks to CMS collaboration and CERN for providing high quality experimental setup and resources.
+
+In this journey of 5 years, my institute, Indian Institute of Science Education and Research (IISER) Pune, has been of great support.
+The institute and the Physics department has provided very good environment, various research facilities and also a constant financial 
+support. The academic and non-academic activities at IISER made my stay very enjoyable. My sincere gratitude to the institute for all the help.
+
+Thanks to Prabhakar, Dhanashree, Tushar and his team for helping with administrative work at IISER; IT department (Nisha, Goldi \& team), Brij and his team from TIFR for providing very good computing resources.
+
+I would like to extend my thanks to Fermilab, USA and Department of Science and Technology, India for enduring financial support. Many 
+thanks to various people at Fermilab who have helped me with physics discussions, administrative work and non-academic life.
+
+Last, but never the least, my heartfelt gratitude to EHEP group at IISER, friends \& family (including the one going to be part of my 
+family) for having lots of fun, discussions and 
+supporting me at all times.
 \end{acknowledgements}
 
 %----------------------------------------------------------------------------------------
@@ -237,15 +270,15 @@ The acknowledgments and the people to thank go here, don't forget to include you
 %	ABBREVIATIONS
 %----------------------------------------------------------------------------------------
 
-\begin{abbreviations}{ll} % Include a list of abbreviations (a table of two columns)
+%\begin{abbreviations}{ll} % Include a list of abbreviations (a table of two columns)
 
-\textbf{CMS} & Compact Muon Solenoid\\
-\textbf{LHC} & Large Hadron Collider\\
-\textbf{SM}  & Standard Model\\
-\textbf{SUSY} & Supersymmetry\\
-\textbf{QCD} & Quantum Chromodynamics\\
-\textbf{QFT} & Quantum Field Theory\\
-\end{abbreviations}
+%\textbf{CMS} & Compact Muon Solenoid\\
+%\textbf{LHC} & Large Hadron Collider\\
+%\textbf{SM}  & Standard Model\\
+%\textbf{SUSY} & Supersymmetry\\
+%\textbf{QCD} & Quantum Chromodynamics\\
+%\textbf{QFT} & Quantum Field Theory\\
+%\end{abbreviations}
 
 %----------------------------------------------------------------------------------------
 %	PHYSICAL CONSTANTS/OTHER DEFINITIONS
@@ -264,23 +297,23 @@ The acknowledgments and the people to thank go here, don't forget to include you
 %	SYMBOLS
 %----------------------------------------------------------------------------------------
 
-\begin{symbols}{lll} % Include a list of Symbols (a three column table)
+%\begin{symbols}{lll} % Include a list of Symbols (a three column table)
 
 %$a$ & distance & \si{\meter} \\
 %$P$ & power & \si{\watt} (\si{\joule\per\second}) \\
 %Symbol & Name & Unit \\
 
-\addlinespace % Gap to separate the Roman symbols from the Greek
+%\addlinespace % Gap to separate the Roman symbols from the Greek
 
 %$\omega$ & angular frequency & \si{\radian} \\
 
-\end{symbols}
+%\end{symbols}
 
 %----------------------------------------------------------------------------------------
 %	DEDICATION
 %----------------------------------------------------------------------------------------
 
-\dedicatory{For/Dedicated to/To my\ldots} 
+\dedicatory{Dedicated to my Parents\ldots} 
 
 %----------------------------------------------------------------------------------------
 %	THESIS CONTENT - CHAPTERS
@@ -297,7 +330,7 @@ The acknowledgments and the people to thank go here, don't forget to include you
 %\newcommand{\GeV}{$\text{Ge\hspace{-.08em}V}$ }
 %\captionsetup{width=.9\linewidth}
 
-%\include{Chapters/Chapter0}
+\include{Chapters/Chapter0}
 \include{Chapters/Chapter1}
 \include{Chapters/Chapter2}
 %\include{Chapters/Chapter2_HF} 
@@ -317,7 +350,7 @@ The acknowledgments and the people to thank go here, don't forget to include you
 %\include{Appendices/AppendixA}
 \include{Appendices/AppendixB}
 \include{Appendices/AppendixC}
-
+\include{Appendices/AppendixD}
 %----------------------------------------------------------------------------------------
 %	BIBLIOGRAPHY
 %----------------------------------------------------------------------------------------
