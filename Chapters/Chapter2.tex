@@ -3,7 +3,7 @@
 
 \section{The large hadron collider}
 The large hadron collider (LHC) is a circular particle accelerator and collider with a 27 km circumference. The LHC is designed to 
-accelerate protons at an energy of 7 TeV \cite{Bruning:782076} and peak luminosity of about $1.2\times10^{34}cm^{-2}s^{-1}$.
+accelerate protons at an energy of 7 TeV \cite{Bruning:782076} and peak luminosity of about $10^{34}cm^{-2}s^{-1}$.
 The LHC started its proton proton collisions in the year 2010 with an energy of 3.5 TeV per proton beam. Later the energy was increased
 to 4 TeV per beam and the data was collected till early 2013. This period from 2008 - 2013 is referred to as run 1 of the LHC. 
 One of the main reasons for starting the LHC was to discover the last missing piece of the SM, Higgs boson. This was
@@ -21,16 +21,18 @@ an energy of 6.5 TeV and the total center of mass energy ($\sqrt{s}$) of collisi
 TeV is done using various stages of CERN (European Organization for Nuclear Research) accelerator complex \cite{Haffner:1621894} shown in 
 Fig.\ref{fig:CERN_AccComplex}.
 
-The source of protons is a bottle of hydrogen gas which is ionized using electric field. The protons are accelerated to 50 MeV using a 
+Hydrogen gas is injected into duoplasmatron in which electrons from a hot cathode are used to break $\mathrm{H_2}$ molecules and form 
+$\mathrm{H^+}$ ions or protons. The protons are accelerated to 50 MeV using a 
 linear accelerator (LINAC2). Next stage of acceleration is carried out by proton synchrotron booster (PSB) to reach 1.4 \gev. Proton 
-synchrotron (PS) further accelerates protons to 25 \gev. After this, protons are sent into super proton synchrotron (SPS) to reach energy 
-of 450 \gev and finally they enter into the LHC ring. The LHC also accelerates heavy ions (such as Pb, Xe) apart from protons, but in the 
+synchrotron (PS) further accelerates protons to 25 \gev. In the PS, 25 ns bunch spacing is established, and PS also shortens the bunches
+so that they can be injected into super proton synchrotron (SPS). In the SPS protons reach energy 
+of 450 \gev and finally they enter into the LHC ring. The LHC also accelerates heavy ions (Pb, Ar and Xe) apart from protons, but in the 
 context of this thesis only protons are relevant.
 
 In the LHC, 16 radio frequency (RF) cavities are used to accelerate protons. These RF cavities operate at a frequency of 400 MHz. Protons 
 get accelerated from 450 \gev to 6.5 TeV in around 20 minutes, after passing through the cavities more than $10^7$ times. When the
 beam has reached right energy, an ideally timed protons do not get accelerated, whereas the protons with slightly different energy
-arriving early or later get accelerated or decelerated. In this way the beam is sorted into \textit{bunches} and each bunch contains
+arriving early or later get accelerated or decelerated. In this way the beam is sorted into bunches and each bunch contains
 protons of required energy.
 
 If the colliding beams are of the type particle-antiparticle, magnetic field in one direction can be used to bend the beams in opposite 
@@ -84,8 +86,19 @@ L = \frac{n_b N^2f}{4\pi\rho_x \rho_y}
 At the LHC, beams do not collide head-on and this expression does not account for the beam crossing angle.
 It also assumes that the bunches are identical in transverse profile, 
 have a Gaussian profile and independent of position along the bunch, and particle distributions remain same during bunch crossing \cite{Patrignani:2016xqp}.
-The maximum instantaneous luminosity delivered by the LHC in the year 2016 was $\approx1.5\times 10^{34} cm^{-2}s^{-1}$ \cite{lumicms},
-and the total integrated luminosity is about 40 \fbinv.
+
+The maximum instantaneous luminosity delivered by the LHC in the year 2016 was $\approx1.5\times 10^{34} cm^{-2}s^{-1}$ \cite{lumicms} 
+(which is more than the design value of $10^{34} cm^{-2}s^{-1}$), and the total integrated luminosity is about 40 \fbinv.
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.7\linewidth]{../Figures/Chap2/int_lumi_per_day_cumulative_pp_2016}
+\caption[Integrated luminosity of data]{Total integrated luminosity as delivered by the LHC and recorded by CMS as a function of time.}
+\label{fig:int_lumi_per_day_cumulative_pp_2016}
+\end{figure}
+%The search described in this thesis uses data collected by CMS during the proton-proton (pp) collision at a $\sqrt{s}=13$ TeV in the year 2016.
+The total integrated luminosity (\lumi) as delivered by the LHC and recorded by the CMS detector as a function of time is shown in 
+Fig.~\ref{fig:int_lumi_per_day_cumulative_pp_2016} for the year 2016~\cite{lumicms}. The total data certified as good for physics analysis 
+corresponds to $\lumi = 35.9\ \fbinv$.
 
 \section{The compact muon solenoid}
 Surrounding one of the collision points of LHC is the compact muon solenoid (CMS) detector. The CMS is a general purpose detector designed to 
@@ -98,16 +111,6 @@ Various sections of the CMS detector are shown in Fig.~\ref{fig:CMS_exploded}.
 \caption[CMS detector view]{A view of the CMS detector \cite{Chatrchyan:2008aa}.}
 \label{fig:CMS_exploded}
 \end{figure}
-%\begin{figure}[h!]
-%\centering
-%\includegraphics[width=0.7\linewidth]{../Figures/Chap2/int_lumi_per_day_cumulative_pp_2016}
-%\caption[Integrated luminosity of data]{Total integrated luminosity as delivered by LHC and recorded by CMS as a function of time}
-%\label{fig:int_lumi_per_day_cumulative_pp_2016}
-%\end{figure}
-%The search described in this thesis uses data collected by CMS during the proton-proton (pp) collision at a $\sqrt{s}=13$ TeV in the year 
-%2016. Total integrated luminosity (\lumi) as delivered by LHC and recorded by the CMS detector as a function of time is shown in 
-%Fig.~\ref{fig:int_lumi_per_day_cumulative_pp_2016} for the year 2016~\cite{lumicms}. The total data certified as good for physics analysis 
-%corresponds to $\lumi = 35.9\ \fbinv$.
 
 \subsection{CMS coordinate system}
 A right handed cartesian coordinate system adopted by the CMS has origin at the nominal collision point. The $x$-axis points towards inner 
