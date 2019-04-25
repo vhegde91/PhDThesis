@@ -556,30 +556,44 @@ In case of boosted $t\bar{t}$ events involving $W\to e\nu$, b-jet from top decay
 becomes inefficient in identifying these kind of electrons. Since the cone size is smaller for large \pt electrons in case of 
 mini-isolation, the efficiency for identification of such electrons is high with mini-isolation.
 
-The efficiency of mini-isolation (or any other identification criteria) can be measured using \textit{tag \& probe} (TnP) technique both 
-in data and MC. If there are differences in data and MC efficiencies, corrections are applied to MC and these corrections are called as 
-scale factors (SFs). Tag object is a well identified electron with very strict criteria on its properties. This object needs to have \pt 
-$>30$ \gev and $|\eta|<2.17$ and matched with any of the electron HLT trigger objects ($\dR(\mathrm{Tag,\ HLT\ object})<0.3$). Probe 
-object is the electron whose efficiency needs to be measured and it has charge opposite to that of tag. To calculate the efficiency of any 
-isolation, we also impose the condition on probe that it passes an ID criteria which does not use isolation variables. In this case we 
-have applied a multivariate technique based electron identification criteria on the probes. The decay of Z boson gives a pair of electrons 
-and one the electrons serves as tag and the other as probe. By using the 4-momenta of electrons, invariant mass of Z boson can be 
-reconstructed. Figure \ref{fig:bin25_el_sc_eta_0p00To0p80_el_pt_35p00To50p00} shows the invariant mass distribution of tag and probe pairs 
-in data collected in 2016 for events with probe $\pt \in 35 - 50\ \gev$ and $\eta < 0.8$. The left plot corresponds to events in which 
-probe object passes min-isolation criteria and right plot corresponds to events in which probe fails mini-isolation criteria. 
+To measure the efficiency of an identification or isolation criteria, \textit{tag \& probe} (TnP) technique can be used. 
+The decay of Z boson can give a pair of electrons and one the electrons serves as the tag and the other as the probe. By using the 
+4-momenta of electrons, invariant mass of Z boson can be reconstructed and the distribution of invariant mass has a peak at the mass of Z boson.
+TnP technique can measure the efficiency of an electron selection both in data and MC simulation. If there are differences in data and
+MC efficiencies, corrections are applied to MC and these corrections are called as scale factors (SFs). The procedure used to obtain SFs 
+for mini-isolation is described below:
+
+Tag object: It is a well identified electron with very strict criteria on its properties. This object needs to have \pt 
+$>30$ \gev and $|\eta|<2.17$ and matched with any of the electron HLT trigger objects. The matching criteria is $\dR(\mathrm{Tag,\ HLT\ 
+object})<0.3$.
+
+Probe object: It is the electron whose selection efficiency needs to be measured and it has charge opposite to that of tag. This object is
+required to pass a multivariate technique based electron identification criteria which does not use isolation variables.
+
+The invariant mass of tag and probe pairs should fall within 60 - 120 \gev so that these pairs are more likely to arise from the decays 
+of Z bosons. Figure \ref{fig:bin25_el_sc_eta_0p00To0p80_el_pt_35p00To50p00} shows the invariant mass distribution of tag and probe pairs 
+in data collected in 2016 for events with probe $\pt \in 35 - 50\ \gev$ and $\eta < 0.8$. The left distribution corresponds to events in 
+which probe object passes min-isolation criteria and right distribution corresponds to events in which probe fails mini-isolation criteria. 
 \begin{figure}[h!]
 \centering
-\includegraphics[width=0.9\linewidth]{../Figures/Chap2/bin25_el_sc_eta_0p00To0p80_el_pt_35p00To50p00}
+\includegraphics[width=0.9\linewidth]{../Figures/Chap2/bin25_el_sc_eta_0p00To0p80_el_pt_35p00To50p00.pdf}
 \captionsetup{width=.9\linewidth}
 \caption[TnP fit for MiniIso pass/fail]{The left (right) plot shows the invariant mass distribution of tag and probe passing (failing) 
 mini-isolation criteria.}
 \label{fig:bin25_el_sc_eta_0p00To0p80_el_pt_35p00To50p00}
 \end{figure}
-This distribution is fitted with a signal function - MC template with Gaussian smearing shown in red, and a background function - CMS 
-shape function shown in blue. The CMS shape function is a product of falling exponential and error function \cite{Meyer:2239058}. The 
-efficiency is given by the ratio of number events with passing probe to the total number of events with passing/failing probe. This can be 
-determined by taking the area under the signal function from both of the fits. The efficiency for the above figure is found to be 0.97 
-with negligible statistical uncertainty. The efficiency in MC can be obtained by using the template or using generator level information.
+
+This distribution is fitted with a signal function plus background function as shown in red. The signal function used is MC template with 
+Gaussian smearing, and the background function is CMS shape function whic is shown in blue.
+The CMS shape function is a product of falling exponential and error function \cite{Meyer:2239058}. The 
+efficiency is given by
+\begin{eqnarray}
+\varepsilon = \mathrm{\frac{Events\ with\ passing\ probe}{Events\ with\ passing\ probe\ +\ Events\ with\ failing\ probe}}
+\end{eqnarray}
+The number of events passing or failing probe can be determined by taking the area under the signal function from left and right
+distributions shown in figure \ref{fig:bin25_el_sc_eta_0p00To0p80_el_pt_35p00To50p00}. The efficiency is found to be 0.97 
+with negligible statistical uncertainty. The efficiency in MC can be obtained by using the template, or using generator level information
+to select events from Z boson decays.
 
 The whole procedure can be repeated by taking other $\pt-\eta$ ranges and calculate the efficiency. To evaluate the systematic 
 uncertainty, refitting is done using different signal function (Crystal-Ball with Gaussian smear) and background function (exponential). 
@@ -707,9 +721,8 @@ overlapping hits in the tracker and hence the efficiency decreases.
 \label{fig:bTagCSVv2op}
 \end{figure}
 \subsection{Missing transverse momentum}
-The pp collision takes place in $z$ direction and hence the momentum before the collision in $x$ and $y$ directions, transverse direction, 
-is zero. From momentum conservation, final momentum after the collision in transverse direction should be zero. In CMS, PF algorithm is 
-used to reconstruct various particles, except the neutrinos, and these reconstructed particles are called as PF candidates. If there are 
+The protons are accelerated in $z$ direction and hence the momentum before the collision in $x$ and $y$ directions, transverse direction, 
+is zero. From momentum conservation, final momentum after the collision in transverse direction should be zero. If there are 
 $n$ PF candidates each of them having a transverse momentum vector $\vec{p_{T}}$, and a neutrino with transverse momentum 
 vector $\vec{p_{T}}^{\nu}$, we have
 \begin{align}
@@ -720,7 +733,8 @@ vector $\vec{p_{T}}^{\nu}$, we have
 The transverse momentum of neutrino, $\vec{p_{T}}^{\nu}$ is nothing but the negative vector sum of all PF candidates. Magnitude of this 
 vector is referred to as \ptmiss and it gives the exact \pt of neutrino if we detect and reconstruct all other particles and measure their 
 transverse meomentum accurately. If there are multiple neutrinos or new particles which do not interact with detector, then their momenta 
-get added vectorially and the resulting vector behaves in the same way as $\vec{p_{T}}^{\nu}$, in the context of above equations.
+get added vectorially and their net effect is reflected in \ptmiss.
+%the resulting vector behaves in the same way as $\vec{p_{T}}^{\nu}$, in the context of above equations.
 \begin{figure}[h!]
 \centering
 \includegraphics[width=0.9\linewidth]{../Figures/Chap2/METresoln}

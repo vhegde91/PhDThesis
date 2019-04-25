@@ -58,7 +58,7 @@ masses ($\sim 1\ \gev$) are considered. However in those cases, actual physics m
 branching ratio for $\nuone \to \gamma+\grav$ can be higher than 50\%. For the \textit{parameter
 space explored in this search}, the kinematic properties do not depend strongly on the exact value of \grav mass.
 
-This analysis is an extension of existing single photon analysis previously~\cite{Sirunyan:2017yse}, by taking full advantage
+The analysis presented here \cite{Sirunyan:2019hzr} is an extension of existing single photon analysis previously~\cite{Sirunyan:2017yse}, by taking full advantage
 of \ptmiss, large hadronic activity, and heavy flavor content.  The analysis will search for large \ptmiss events
 in various regions of jet multiplicity and b-jet multiplicity, motivated by several SMS scenarios.  The 
 SM backgrounds are estimated from data control regions with as little reliance on simulations as possible.
@@ -259,7 +259,7 @@ and $|\eta|<2.5$.
   point (CSVv2M $>0.8484$) is used as a discriminating variable \cite{BTV-16-002} and is used for deciding which signal region an event 
   belongs to.
 
-\item $\ptmiss>200 \gev$ for signal region and the region $100-200$ \gev \ptmiss is used in estimation of \gjets background.
+\item $\ptmiss>200\ \gev$ for signal region and the region $100-200$ \gev \ptmiss is used in estimation of \gjets background.
 \item Angular cut:
   The majority of \gjets and QCD multijet events in our high-\ptmiss search region
   have jets with undermeasured momenta and thus a spurious
@@ -271,13 +271,13 @@ and $|\eta|<2.5$.
 \item Muon veto:
   Muon candidates are selected using
   medium-ID muon selection \cite{Sirunyan:2018fpa} with the additional
-  requirements:
+  requirements on impact parameters (IPs):
   \begin{align}
     d_{xy}(\mu,\mathrm{PV}) &< 0.2\;\mathrm{cm}\nonumber\\
     d_{z}(\mu,\mathrm{PV}) &< 0.5\;\mathrm{cm}
   \end{align}
 
-  Muon candidates are required to have $\pt>10\gev$ and $|\eta|<2.4$.
+  Muon candidates are required to have $\pt>10\ \gev$ and $|\eta|<2.4$.
   To distinguish between prompt muons and muons from b-hadron
   decays, muons are required to satisfy an isolation requirement,
   $I_{\mathrm{mini}}<0.2$, where $I_{\mathrm{mini}}$ is the mini-isolation
@@ -287,7 +287,7 @@ and $|\eta|<2.5$.
 \item Electron veto:
 
   Electron candidates are selected using very loose criteria on its properties, called veto selection.
-  They are required to have $\pt>10\gev$ and $|\eta|<2.5$ and satisfy an isolation
+  They are required to have $\pt>10\ \gev$ and $|\eta|<2.5$ and satisfy an isolation
   requirement of $I_{\mathrm{mini}}<0.1$. Any event with an electron satisfying all of the
   above criteria is vetoed.
 \item Isolated track vetoes:
@@ -310,7 +310,7 @@ and $|\eta|<2.5$.
   as leptonic or hadronic by the PF algorithm.
   For leptonic tracks, we require:
   \begin{itemize}
-  \item $\pt>5\gev$,
+  \item $\pt>5\ \gev$,
   \item $I_{\mathrm{tk}}<0.2$,
   \end{itemize}
   where $I_{\mathrm{tk}}$ is the scalar \pt sum of other
@@ -318,7 +318,7 @@ and $|\eta|<2.5$.
   by the \pt value of the primary track.
   For hadronic tracks, we apply slightly tighter requirements:
   \begin{itemize}
-  \item $\pt>10\gev$,
+  \item $\pt>10\ \gev$,
   \item $I_{\mathrm{tk}}<0.1$.
   \end{itemize}
 
@@ -348,6 +348,29 @@ and $|\eta|<2.5$.
   is less than \ptg is also rejected. This criteria,  $p_{T}^{\mathrm{jet}} \geq \ptg $,
   helps in cleaning the data if there are any photon reconstruction failures (Appendix \ref{AppendixD}).
 \end{itemize}
+
+Table \ref{tab:eventSel} summarizes various event selections applied to the search region.
+\begin{table*}[htbp]
+\centering
+\caption[Event selections]{List of event selections applied to the search regions.}
+\label{tab:eventSel}
+\begin{tabular}{l|l}
+\hline
+Variable/object &  Selection\\\hline
+Photon & $\pt$ $ > 100\ \gev$, $|\eta| < 2.4$\\
+$\mu$ & Veto, if $\pt>10\ \gev$ \& $|\eta|<2.4$ \& $I_{\mathrm{mini}}<0.2$ \& IP cuts\\
+$e$ & Veto, if $\pt>10\ \gev$ \& $|\eta|<2.5$ \& $I_{\mathrm{mini}}<0.1$\\
+Isolated $e,\mu$ tracks & Veto, if $\pt>5\ \gev$ \& $I_{\mathrm{tk}}<0.2$ \& $m_{T}<100\ \gev$\\
+Isolated $\pi^0$ tracks & Veto, if $\pt>10\ \gev$ \& $I_{\mathrm{tk}}<0.1$ \& $m_{T}<100\ \gev$\\
+$\ptmiss$ & $> 200\ \gev$\\
+$\nj$ & $\geq 2$, $\pt^{\mathrm{jet}}>30$ \gev, $|\eta^{\mathrm{jet}}|<2.4$ \\
+$\htg$ &  $(> 800\ \gev )\ \parallel (> 500\ \gev\ \mathrm{if}\ \ptg > 190\ \gev)$ \\
+$min(\dphi_{1},~\dphi_{2})$ & $ > 0.3$ \\
+Event cleaning filters & Pass\\\hline			
+%$min(\dR(jet,\gamma))$ & $<0.3$\\
+%$p_{T}^{\mathrm{jet}}$ & $ \geq \ptg $\\\hline
+\end{tabular}
+\end{table*}
 
 \section{SM background and search regions}
 The dominant backgrounds for these high \ptmiss, single photons events typically involve either fake \ptmiss, from $\gamma$-multijet events, or leptonic 
