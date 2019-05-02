@@ -88,7 +88,7 @@ headsepline, % Uncomment to get a line under the header
 \supervisor{Dr. Seema \textsc{Sharma}} % Your supervisor's name, this is used in the title page, print it elsewhere with \supname
 \examiner{} % Your examiner's name, this is not currently used anywhere in the template, print it elsewhere with \examname
 \degree{Doctor of Philosophy} % Your degree name, this is used in the title page and abstract, print it elsewhere with \degreename
-\author{Vinay \textsc{Hegde}} % Your name, this is used in the title page and abstract, print it elsewhere with \authorname
+\author{\textbf{Vinay Hegde}} % Your name, this is used in the title page and abstract, print it elsewhere with \authorname
 \addresses{} % Your address, this is not currently used anywhere in the template, print it elsewhere with \addressname
 
 \subject{Physics} % Your subject area, this is not currently used anywhere in the template, print it elsewhere with \subjectname
@@ -117,66 +117,105 @@ headsepline, % Uncomment to get a line under the header
 \begin{titlepage}
 \begin{center}
 
+%\HRule \\[0.4cm] % Horizontal line
+{\huge \bfseries \ttitle\par}\vspace{0.4cm} % Thesis title
+%\HRule \\[1.5cm] % Horizontal line
+
+\vfill
+\Large A thesis\\\vspace{0.5cm} submitted in partial fulfillment of the requirements\\\vspace{2cm} Of the degree of\\\vspace{0.5cm} \degreename\\[0.3cm] % University requirement text
+%\textit{in the}\\[0.4cm]
+\vspace{1.5cm}By\\\vspace{1cm}
+\authorname\\
+ID No.: 20143348
+\vfill
+\vspace{1cm}
+\includegraphics[width=0.2\linewidth]{Figures/iiser_logo.png} % University/department logo - uncomment to place it
+
 \vspace*{.06\textheight}
 {\scshape\LARGE \univname\par}\vspace{1.5cm} % University name
-\textsc{\Large Doctoral Thesis}\\[0.5cm] % Thesis type
+%\textsc{\Large Doctoral Thesis}\\[0.5cm] % Thesis type
 
-\HRule \\[0.4cm] % Horizontal line
-{\huge \bfseries \ttitle\par}\vspace{0.4cm} % Thesis title
-\HRule \\[1.5cm] % Horizontal line
- 
-\begin{minipage}[t]{0.4\textwidth}
-\begin{flushleft} \large
-\emph{Author:}\\
-%\href{http://www.johnsmith.com}{\authorname} % Author name - remove the \href bracket to remove the link
-\authorname % Author name
-\end{flushleft}
-\end{minipage}
-\begin{minipage}[t]{0.4\textwidth}
-\begin{flushright} \large
-\emph{Supervisor:} \\
-\supname % Supervisor name
-\end{flushright}
-\end{minipage}\\[3cm]
+%\begin{minipage}[t]{0.4\textwidth}
+%\begin{flushleft} \large
+%\emph{Author:}\\
+%%\href{http://www.johnsmith.com}{\authorname} % Author name - remove the \href bracket to remove the link
+%\authorname % Author name
+%\end{flushleft}
+%\end{minipage}
+%\begin{minipage}[t]{0.4\textwidth}
+%\begin{flushright} \large
+%\emph{Supervisor:} \\
+%\supname % Supervisor name
+%\end{flushright}
+%\end{minipage}\\[3cm]
  
 \vfill
 
-\large \textit{A thesis submitted in fulfillment of the requirements\\ for the degree of \degreename}\\[0.3cm] % University requirement text
-\textit{in the}\\[0.4cm]
-\groupname\\\deptname\\[2cm] % Research group name and department name
- 
-\vfill
+{\Large 2019}\\[4cm] % Date
 
-{\large \today}\\[4cm] % Date
-%\includegraphics{Logo} % University/department logo - uncomment to place it
  
 \vfill
 \end{center}
 \end{titlepage}
 
 %----------------------------------------------------------------------------------------
+%	DEDICATION
+%----------------------------------------------------------------------------------------
+
+\dedicatory{Dedicated to my Parents\ldots} 
+
+%----------------------------------------------------------------------------------------
 %	DECLARATION PAGE
 %----------------------------------------------------------------------------------------
 
-%\begin{declaration}
-%\addchaptertocentry{\authorshipname} % Add the declaration to the table of contents
-%\noindent I, \authorname, declare that this thesis titled, \enquote{\ttitle} and the work presented in it are my own. I confirm that:
-%
-%\begin{itemize} 
-%\item This work was done wholly or mainly while in candidature for a research degree at this University.
-%\item Where any part of this thesis has previously been submitted for a degree or any other qualification at this University or any other institution, this has been clearly stated.
-%\item Where I have consulted the published work of others, this is always clearly attributed.
-%\item Where I have quoted from the work of others, the source is always given. With the exception of such quotations, this thesis is entirely my own work.
-%\item I have acknowledged all main sources of help.
-%\item Where the thesis is based on work done by myself jointly with others, I have made clear exactly what was done by others and what I have contributed myself.\\
-%\end{itemize}
-% 
 %\noindent Signed:\\
 %\rule[0.5em]{25em}{0.5pt} % This prints a line for the signature
 % 
 %\noindent Date:\\
 %\rule[0.5em]{25em}{0.5pt} % This prints a line to write the date
-%\end{declaration}
+\cleardoublepage
+{\begin{center}
+\huge \textbf{Declaration}\\
+\end{center}}
+\noindent I declare that this written submission represents my ideas in my own words and where
+others' ideas have been included, I have adequately cited and referenced the original
+sources. I also declare that I have adhered to all principles of academic honesty and
+integrity and have not misrepresented or fabricated or falsified any
+idea/data/fact/source in my submission. I understand that violation of the above will
+be cause for disciplinary action by the Institute and can also evoke penal action from
+the sources which have thus not been properly cited or from whom proper permission
+has not been taken when needed.
+\vspace{2cm}
+
+\begin{flushright}
+(Vinay Hegde) \\
+ID No.: 20143348 
+\end{flushright}
+\begin{flushleft}
+Date:
+\end{flushleft}
+
+\cleardoublepage
+
+%----------------------------------------------------------------------------------------
+%	CERTIFICATE PAGE
+%----------------------------------------------------------------------------------------
+\cleardoublepage
+{\begin{center}
+\huge \textbf{CERTIFICATE}\\
+\end{center}}
+\noindent Certified that the work incorporated in the thesis entitled "Search for supersymmetry in events with a photon, jets, b-jets, and missing transverse momentum"
+submitted by Vinay Hegde was carried out by the candidate, under my supervision. The
+work presented here or any part of it has not been included in any other thesis submitted previously
+for the award of any degree or diploma from any other University or institution.
+\vspace{2cm}
+
+\begin{flushright}
+(Dr. Seema Sharma)
+\end{flushright}
+\begin{flushleft}
+Date:
+\end{flushleft}
 
 \cleardoublepage
 
@@ -189,31 +228,6 @@ headsepline, % Uncomment to get a line under the header
 %\noindent\enquote{\itshape A quote}\bigbreak
 %
 %\hfill Author of quote
-
-%----------------------------------------------------------------------------------------
-%	ABSTRACT PAGE
-%----------------------------------------------------------------------------------------
-\begin{abstract}
-\addchaptertocentry{\abstractname} % Add the abstract to the table of contents
-Although many of the experimental observations can be theoretically well explained using standard model (SM) of particle physics, SM is
-not complete because it does not explain gravity, dark matter and dark energy in the universe,
-matter-antimatter asymmetry, nonzero neutrino mass, observed mass of the Higgs boson being much lower than theoretically favored value etc.
-Supersymmetry (SUSY) is a well motivated theoretical extension of the SM which can address some of the issues in SM such as, Higgs mass 
-problem and dark matter problem. In SUSY, every SM particle has a superpartner whose spin differs by half a unit. We have not yet observed 
-superpartners with same masses as their SM counterparts which makes SUSY a broken symmetry. There are several theoretical mechanisms to 
-achieve this symmetry breaking, and one of the mechanisms is gauge mediated SUSY breaking (GMSB). If GMSB is realized in nature, it 
-typically results in events with one or more 
-photons in the final state. A search for SUSY is presented based on events with at least one photon, jets, and
-large missing transverse momentum produced in proton-proton collisions at a center-of-mass energy of 13 TeV. The data correspond to an 
-integrated luminosity of 35.9 \fbinv and were recorded at the LHC with the CMS detector in 2016. The analysis characterizes signal-like 
-events by categorizing the data into various signal regions based on the number of jets, the number of {\cPqb}-tagged jets, and the
-missing transverse momentum. No significant excess of events is observed with respect to the expectations from standard model processes. 
-Limits are placed on the gluino and top squark pair production cross sections using several simplified models of supersymmetric particle 
-production with GMSB scenario. Depending on the model and the mass of the next-to-lightest supersymmetric 
-particle, the production of gluinos with masses as large as 2120 \gev and the production of top squarks with masses as large as 1230 \gev 
-are excluded at 95\% confidence level.
-
-\end{abstract}
 
 %----------------------------------------------------------------------------------------
 %	ACKNOWLEDGEMENTS
@@ -256,6 +270,31 @@ Last, but never the least, my heartfelt gratitude to EHEP group at IISER (Dr. Se
 Ms. Angira Rastogi, Mr. Anshul Kapoor, Mr. Arnab Laha, Ms. Bhumika Kansal, Dr. Kunal Kothekar, Mr. Shubham Pandey, Mr. Shubhanshu Chauhan and undergraduate students), friends
 \& family for having lots of fun, discussions and supporting me at all times.
 \end{acknowledgements}
+
+%----------------------------------------------------------------------------------------
+%	ABSTRACT PAGE
+%----------------------------------------------------------------------------------------
+\begin{abstract}
+\addchaptertocentry{\abstractname} % Add the abstract to the table of contents
+Although many of the experimental observations can be theoretically well explained using standard model (SM) of particle physics, SM is
+not complete because it does not explain gravity, dark matter and dark energy in the universe,
+matter-antimatter asymmetry, nonzero neutrino mass, observed mass of the Higgs boson being much lower than theoretically favored value etc.
+Supersymmetry (SUSY) is a well motivated theoretical extension of the SM which can address some of the issues in SM such as, Higgs mass 
+problem and dark matter problem. In SUSY, every SM particle has a superpartner whose spin differs by half a unit. We have not yet observed 
+superpartners with same masses as their SM counterparts which makes SUSY a broken symmetry. There are several theoretical mechanisms to 
+achieve this symmetry breaking, and one of the mechanisms is gauge mediated SUSY breaking (GMSB). If GMSB is realized in nature, it 
+typically results in events with one or more 
+photons in the final state. A search for SUSY is presented based on events with at least one photon, jets, and
+large missing transverse momentum produced in proton-proton collisions at a center-of-mass energy of 13 TeV. The data correspond to an 
+integrated luminosity of 35.9 \fbinv and were recorded at the LHC with the CMS detector in 2016. The analysis characterizes signal-like 
+events by categorizing the data into various signal regions based on the number of jets, the number of {\cPqb}-tagged jets, and the
+missing transverse momentum. No significant excess of events is observed with respect to the expectations from standard model processes. 
+Limits are placed on the gluino and top squark pair production cross sections using several simplified models of supersymmetric particle 
+production with GMSB scenario. Depending on the model and the mass of the next-to-lightest supersymmetric 
+particle, the production of gluinos with masses as large as 2120 \gev and the production of top squarks with masses as large as 1230 \gev 
+are excluded at 95\% confidence level.
+
+\end{abstract}
 
 %----------------------------------------------------------------------------------------
 %	LIST OF CONTENTS/FIGURES/TABLES PAGES
@@ -310,11 +349,7 @@ Ms. Angira Rastogi, Mr. Anshul Kapoor, Mr. Arnab Laha, Ms. Bhumika Kansal, Dr. K
 
 %\end{symbols}
 
-%----------------------------------------------------------------------------------------
-%	DEDICATION
-%----------------------------------------------------------------------------------------
 
-\dedicatory{Dedicated to my Parents\ldots} 
 
 %----------------------------------------------------------------------------------------
 %	THESIS CONTENT - CHAPTERS
