@@ -22,7 +22,7 @@ These variations are propagated into the various jet-dependent variables, includ
 The effect is 5\% or less.
 \item {\bf Jet Energy Resolution:} Simulated jet momenta are smeared to match that in data, and the smearing factors are varied according to uncertainties on the jet energy resolution measurements. These variations are propagated into the various jet-dependent variables, including \nj, \nb, \ptmiss, $\dphi(jet,\ptmiss)$ and \ST. The overall effect is 2\%.
 \item {\bf \ptmiss Uncertainty :} Mainly special treatment of \ptmiss modeling in FastSim, and is expected to be important only in compressed regions. The signal yields are obtained using GenMET, summing all visible generator-level particles, and PFMET and average of the GenMET and PFMET is taken as central value.  A flat uncertainty equal to one-half the difference between the GenMET and PFMET, fully correlated among \ptmiss bins is used for limit settings. This procedure results in less than a few percent uncertainty in non-compressed and $<10\%$ uncertainties in highly compressed regions.
-\item {\bf ISR:} An ISR correction is derived from \ttbar events, with a selection requiring two leptons (electrons or muons) and two b-tagged jets, implying that any other jets in the event arise from ISR.
+\item {\bf ISR:} An ISR correction is derived from \ttbar\ events, with a selection requiring two leptons (electrons or muons) and two b-tagged jets, implying that any other jets in the event arise from ISR.
 The correction factors are 1.000, 0.920, 0.821, 0.715, 0.662, 0.561, 0.511 for \nj-ISR$ = 0,1,2,3,4,5,6{+}$.
 For signal samples, number of ISR jets is the number of jets which are not originating from decay of gluino or vector boson or Higgs or top.
 The corrections are applied to the simulated signal samples with an additional normalization factor, typically ${\sim}1.15$ (depending on the signal model),
@@ -34,7 +34,7 @@ The effect on the yield ranges from $4-30\%$, with the largest effect for compre
 Following theoretical uncertainties are evaluated for each signal model point or explained otherwise. 
 \begin{itemize}
 \item {\bf Scales:} The uncertainty is calculated using the envelope of the weights from varying the renormalization and factorization scales, $\mu_{\text{R}}$ and $\mu_{\text{F}}$,
-by a factor of 2 \cite{Cacciari:2003fi,Catani:2003zt}. The effect on the yield is 2\%.
+by a factor of 0.5 and 2 independently \cite{Cacciari:2003fi,Catani:2003zt}. The effect on the yield is 2\%.
 \item {\bf PDFs:} The LHC4PDF prescription for the uncertainty on the total cross section is included as $\pm1$ sigma bands in the results plots. No additional uncertainty is considered for the uncertainty in the acceptance due to PDFs.
 \end{itemize}
 

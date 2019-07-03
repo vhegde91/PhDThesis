@@ -67,7 +67,7 @@ The triggers used for both the signal and control regions are described in Secti
 Even selections are detailed in Section~\ref{sec:event-selection}. The background 
 estimation techniques are discussed in Section~\ref{sec:bkgestimation}.  Signal systematic uncertainties are described in Section~\ref{sec:signal-systematics}.
 Finally, results and a description of our statistical modeling of data and the inferred limits are described 
-in chapter \ref{Chap4}.
+in Chapter \ref{Chap4}.
 
 \section{MC simulation samples}
 \label{sec:mc-samples}
@@ -233,7 +233,7 @@ The following requirements define the baseline selection:
 The photon reconstruction and identification is described in the following.
 
 \item Photons: 
-Photons are selected using ID criteria described in \ref{sec:photonID}.
+Photons are selected using ID criteria described in Section \ref{sec:photonID}.
 Photon candidates whose supercluster
 is found to be in the pseudorapidity range of $1.44 < |\eta| < 1.56$, which is the EB-EE 
 transition region are not considered.
@@ -259,7 +259,7 @@ and $|\eta|<2.5$.
   point (CSVv2M $>0.8484$) is used as a discriminating variable \cite{BTV-16-002} and is used for deciding which signal region an event 
   belongs to.
 
-\item $\ptmiss>200\ \gev$ for signal region and the region $100-200$ \gev \ptmiss is used in estimation of \gjets background.
+\item $\ptmiss>200\ \gev$ for signal region and $100 < \ptmiss < 200$ \gev is used for estimation of \gjets background.
 \item Angular cut:
   The majority of \gjets and QCD multijet events in our high-\ptmiss search region
   have jets with undermeasured momenta and thus a spurious
@@ -281,14 +281,16 @@ and $|\eta|<2.5$.
   To distinguish between prompt muons and muons from b-hadron
   decays, muons are required to satisfy an isolation requirement,
   $I_{\mathrm{mini}}<0.2$, where $I_{\mathrm{mini}}$ is the mini-isolation
-  variable, whose description is similar to the one in \ref{sec:eleID} for electrons.
+  variable, whose description is similar to the one in Section \ref{sec:eleID} for electrons.
  Any event with a muon satisfying all of the  above criteria is vetoed.
 
 \item Electron veto:
 
   Electron candidates are selected using very loose criteria on its properties, called veto selection.
   They are required to have $\pt>10\ \gev$ and $|\eta|<2.5$ and satisfy an isolation
-  requirement of $I_{\mathrm{mini}}<0.1$. Any event with an electron satisfying all of the
+  requirement of $I_{\mathrm{mini}}<0.1$. Similar to the muons, electrons also need to
+  pass IP cuts: $d_{xy} < 0.06$ cm, $d_{z} < 0.5$ cm for EB electrons
+  and $d_{xy} < 0.2$ cm, $d_{z} < 0.9$ cm for EE electrons.  Any event with an electron satisfying all of the
   above criteria is vetoed.
 \item Isolated track vetoes:
   
@@ -361,7 +363,7 @@ Photon & $\pt$ $ > 100\ \gev$, $|\eta| < 2.4$\\
 $\mu$ & Veto, if $\pt>10\ \gev$ \& $|\eta|<2.4$ \& $I_{\mathrm{mini}}<0.2$ \& IP cuts\\
 $e$ & Veto, if $\pt>10\ \gev$ \& $|\eta|<2.5$ \& $I_{\mathrm{mini}}<0.1$\\
 Isolated $e,\mu$ tracks & Veto, if $\pt>5\ \gev$ \& $I_{\mathrm{tk}}<0.2$ \& $m_{T}<100\ \gev$\\
-Isolated $\pi^0$ tracks & Veto, if $\pt>10\ \gev$ \& $I_{\mathrm{tk}}<0.1$ \& $m_{T}<100\ \gev$\\
+Isolated $\pi^\pm$ tracks & Veto, if $\pt>10\ \gev$ \& $I_{\mathrm{tk}}<0.1$ \& $m_{T}<100\ \gev$\\
 $\ptmiss$ & $> 200\ \gev$\\
 $\nj$ & $\geq 2$, $\pt^{\mathrm{jet}}>30$ \gev, $|\eta^{\mathrm{jet}}|<2.4$ \\
 $\htg$ &  $(> 800\ \gev )\ \parallel (> 500\ \gev\ \mathrm{if}\ \ptg > 190\ \gev)$ \\
@@ -399,7 +401,7 @@ Figure~\ref{fig:baselineKineHist} shows the expected distributions of $\ptg$, \p
   \centering
   \includegraphics[width=0.98\linewidth]{../Figures/Chap3/event-selection/SMbackgroundVersusSignalRegion.pdf}
   \captionsetup{width=.9\linewidth}
-  \caption[MC BG vs signal in search and sideband regions]{Distributions of events after baseline selection.  Filled, stacked histograms represent SM backgrounds, taken directly from 
+  \caption[MC BG vs signal in search and sidebands]{Distributions of events after baseline selection.  Filled, stacked histograms represent SM backgrounds, taken directly from 
   simulation, open histograms show two examples of T5bbbbZG signals, one with a high mass (1750~\gev) NLSP and one with a 
   low mass (150~\gev) NLSP.  The gluino mass for both signals is 1800~\gev. The lowest \ptmiss bin is not used for 
   final limit calculations.}
@@ -410,8 +412,8 @@ Figure~\ref{fig:baselineEvtYield} shows the expected distributions of event yiel
 %A cut flow for each background process and two representative signals is shown in Table~\ref{tab:Cutflow}.\\
 The final statistical interpretations are made using 25 independent signal regions. 
 These regions are defined by \nj, \nb, and \ptmiss selections.  Six groups are defined  
-based on \nj and \nb, they are listed in table \ref{tab:SR_bins} along with 6 sideband 
-regions which are used for fake \ptmiss (\gjets and QCD multijet) background. The sideband regions are not used for
+based on \nj and \nb, they are listed in table \ref{tab:SR_bins} along with 6 sidebands 
+which are used for fake \ptmiss (\gjets and QCD multijet) background. The sidebands are not used for
 the interpretations.
 Each of these regions, $N^{\text{b-jets}}_{\text{jets}}$, is further divided into 5 \ptmiss regions 
 whose boundaries are defined by, $100<\ptmiss<200$ (sideband), $200<\ptmiss<270$, $270<\ptmiss<350$, $350<\ptmiss<450$, 
@@ -421,7 +423,7 @@ The first bin in each of the 6 groups in Figure~\ref{fig:baselineEvtYield} corre
 to 100 ~\gev $<$ \ptmiss $<$ 200 ~\gev sideband used for estimation of fake \ptmiss background.
 \begin{table}[h]
 \centering
-\caption{Signal region and sideband regions}
+\caption{Signal regions and sidebands}
 \label{tab:SR_bins}
 \def\arraystretch{1.2}
 \begin{tabular}{c|c|c|c|c}
