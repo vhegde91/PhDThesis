@@ -38,14 +38,12 @@ There are two important paramterizations, namely, $f^{tt,W}$ and $\beta$.
 
 The fake rate is parameterized as a function of local metrics relevant to electron reconstruction;
 the electron \pt and the charged track multiplicity, $Q_{mult}$ around the electron 
-are found to give the best closure on MC.  The metric $Q_{mult}$ 
-is defined to be the sum of charged PF candidates with the jet 
-matched, $\dR<0.3$, to the electron. Since we require electrons have at least
-$\pt>100~\gev$, the jet clustering algorithm almost always clusters
-the electron into an AK4 jet.  On the rare occasions that there is 
-no matched jet, the event is rejected.  The distribution of $Q_{mult}$
-is shown in Figure~\ref{fig:qMultDist} for DY, W+jets, and $t\bar{t}$ events. 
-
+are found to give the best closure on MC.  
+The metric $Q_{mult}$ is defined to be sum of charged constituents of jet i.e. the charged PF candidates associated with the jet, which is
+matched to the electron within $\dR<0.3$. Since we require electrons have at least $\pt>100~\gev$, the jet clustering algorithm almost 
+always clusters the electron into an AK4PF jet along with any neighboring activity. Hence, $Q_{mult}$ is a well defined quantity for high
+\pt electrons.  On the rare occasions that there is no matched jet, the event is rejected. The distribution of $Q_{mult}$ is shown in 
+Figure~\ref{fig:qMultDist} for DY, W+jets, and $t\bar{t}$ events.
 \begin{figure}[h!]
 \centering
 \includegraphics[width=0.48\linewidth]{../Figures/Chap3/fake_rate_closure/QMult_eleJet_ttwDY.pdf}

@@ -4,8 +4,7 @@
 \section{The large hadron collider}
 The large hadron collider (LHC) is a circular particle accelerator and collider with a 27 km circumference. The LHC is designed to 
 accelerate protons at an energy of 7 TeV \cite{Bruning:782076} and peak luminosity of about $10^{34}cm^{-2}s^{-1}$.
-In the year 2010, the LHC started its proton proton collisions with an energy of 3.5 TeV per proton beam. Later the energy was increased
-to 4 TeV per beam and the data were collected till early 2013. The period from 2008 - 2013 is referred to as run 1 of the LHC. 
+In the year 2010, the LHC started its proton proton collisions with an energy of 3.5 TeV per proton beam. In 2012, the energy was increased to 4 TeV per beam and the data were collected till 2012. The period from 2010 - 2012 is referred to as run 1 of the LHC.
 One of the main reasons for starting the LHC was to discover the last missing piece of the SM, Higgs boson. This was
 achieved by the CMS and ATLAS collaborations \cite{Aad:2012tfa}\cite{Chatrchyan:2012xdj} in the year 2012. The other goal of
 the LHC is to answer some of the fundamental questions in physics: are there any new particles yet to be discovered?
@@ -436,7 +435,7 @@ If at least one muon segment matches with the extrapolated track from inner trac
 The performance of global muon is better than standalone or tracker muon since it uses information from inner tracker and muon system.
 
 The momentum of muon is determined using \textit{Tune-P} algorithm \cite{Chatrchyan:2012xi}. The reconstructed muons are fed into PF 
-algorithm which combines information from other subdetectors of CMS (tracker and calorimeters) and applies various quality criteria. The identification of muons uses 
+algorithm which combines information from the CMS tracking and calorimeter detectors and applies various quality criteria. The identification of muons uses 
 criteria on track fit $\chi^2$, number of hits in tracker or muon chambers or both, compatibility of tracker tracks and hits/tracks in 
 muon chambers and also the  compatibility with primary vertex. Detailed muon reconstruction procedure and its performance in 2015 and 2016 
 data is described in ref. \cite{Sirunyan:2018fpa}.
@@ -476,7 +475,7 @@ photons in this SUSY search.
 \captionsetup{width=.99\linewidth}
 \caption[Photon Identification ]{A list of variables used for identification (ID) of photons in barrel and endcap. Prompt photon 
 properties should not exceed any of the values listed in this table. Bottom 2 rows show the efficiency for signal (prompt photons) and 
-background (non-prompt photons).}
+background (non-prompt photons) \cite{EGamPho}.}
 \label{tab:photonID}
 \begin{tabular}{c|c|c}
 \hline
@@ -511,7 +510,7 @@ footprint of the candidate photon and are within a cone of \dR = 0.3.
 foot-print of
 the candidate photon and are within a cone of \dR = 0.3.
 \end{itemize}
-\footnotetext{Footprint refers to the signatures left by photon candidate in various subdetectors.}
+\footnotetext{Footprint refers to the signatures left by a photon candidate in electromagnetic and hadron calorimeters and tracker if it had converted.}
 The PF $h^0$ and $\gamma$ isolations are corrected for pileup contributions using $\mathrm{Iso}_{\mathrm{corr}} = 
 \mathrm{Iso}_{\mathrm{original}} - \rho\mathrm{EA}$, where $\rho$ is the energy density of the event calculated using FastJet package 
 \cite{Cacciari:2011ma} which is a measure of pileup activity in the event per unit area and EA is the effective area.
@@ -615,8 +614,7 @@ type of corrections are applied to other physics objects as well.
  
 
 \subsection{Jets}
-Hadronization of quarks and gluons results in formation of many mesons and baryons which is referred to as a jet.
-The jet deposits its energy mostly in HCAL. On an average 65\% of the total energy of the jet is carried by charged hadrons, 25\% by photons and 10\% neutral hadrons (excluding $\pi^{0}$). 
+Hadronization of quarks and gluons results in formation of a spray of many mesons and baryons which are then clustered into the jets. On an average 65\% of the total energy of the jet is carried by charged hadrons, 25\% by photons and 10\% neutral hadrons (excluding $\pi^{0}$). 
 Figure \ref{fig:JetEfrac} shows the jet energy fraction as a function of \pt in data and simulation. The lower panel shows the difference 
 in data and simulation.
 \begin{figure}[h!]
