@@ -1,0 +1,326 @@
+\section{Results \& statistical interpretations}
+\label{sec:results}
+
+The background predictions described in Section~\ref{sec:bkgestimation} are 
+summed together for the final statistical SMS interpretations.   This is
+done use the Higgs combine framework~\cite{Hcombine}, where each analysis
+bin is represented as a individual counting experiment with one 
+signal process and five background processes.  Each process is assumed 
+to be a Poisson distribution with some number of prior distribution representing
+the uncertainty on the corresponding process's rate parameter. The exact
+details of how these uncertainties are modeled depends on the 
+details of each of the background estimation methods that were used. 
+
+In general, each background estimation is a scaling of a Poisson process 
+from a control region, $N^{\mathrm{pred}}_{\mathrm{bkg}}=N^{\mathrm{pred}}_{\mathrm{CR}}\beta$, where $\beta$ 
+is the transfer factor, $N^{\mathrm{pred}}_{\mathrm{CR}}$ is the expected yield in the 
+control region of the corresponding process, and $N^{\mathrm{pred}}_{\mathrm{bkg}}$ is the 
+prediction provided as the expected mean of the corresponding process's
+Poisson distribution for a given signal region.  In general,  $N^{\mathrm{pred}}_{\mathrm{CR}}$
+is constrained by the observed yields in the control region, 
+$N^{\mathrm{obs}}_{\mathrm{CR}}$ and there are five such constraints from each 
+of the 5 control regions discussed in Section~\ref{sec:bkgestimation}.  For a 
+simplified counting experiment with only one background process and one signal
+process, the likelihood for this type of background prediction would be, 
+
+\begin{equation}
+\centering
+\mathcal{L}(N^{\mathrm{pred}}_{\mathrm{sig}},N^{\mathrm{pred}}_{\mathrm{bkg}}|N^{\mathrm{obs}}_{\mathrm{SR}},N^{\mathrm{obs}}_{\mathrm{CR}}) \propto (N^{\mathrm{pred}}_{\mathrm{bkg}}+N^{\mathrm{pred}}_{\mathrm{sig}})^{N^{\mathrm{obs}}_{\mathrm{SR}}}e^{-N^{\mathrm{pred}}_{\mathrm{bkg}}}\cdot(\frac{N^{\mathrm{pred}}_{\mathrm{bkg}}}{\beta})^{N^{\mathrm{obs}}_{\mathrm{CR}}} e^{-N^{\mathrm{pred}}_{\mathrm{bkg}}/\beta}
+\end{equation}
+
+This likelihood, is equivalent to a Poisson likelihood with a gamma distribution
+as the prior and can be used to constrain both the predicted background the 
+signal strength in the signal region with the proper modeling of the $N^{\mathrm{pred}}_{\mathrm{bkg}}$ 
+uncertainty due to limited statistics of the control region observed yield.
+
+As such, we modeling the uncertainty on the prediction due to limited 
+control region statistics as a gamma distribution.  This procedure is the 
+recommended procedure of the CMS Statistics Committee, especially when the 
+observed control region statistics are too small to justifying a Gaussian 
+approximation.  While the observed control region events vary considerably, 
+for the signal regions in extreme corners of our phase space the use of a 
+Gamma prior distribution is critical for modeling uncertainties.  For uniformity, 
+we generally use it everywhere.  The exception to this, as mentioned below, is 
+the $e$+jets control, 
+which is used for estimating the fake-photon background, where we use a Gaussian prior 
+to model the effect of limited control region statistics.  Note, the number of 
+observed events in these control regions is always larger than 17 events, for 
+which the $1\sigma$ intervals of a Poisson disribution and Gaussian distribution
+still agree to within ~10\%.  
+
+%While the uncertainty due to $N^{\mathrm{obs}}_{\mathrm{CR}}$ is typically modeled with 
+%a gamma distribution, 
+The uncertainty on the transfer factors used to scale the observed event yields 
+in the control regions are modeled with log-normal prior
+distributions.  These priors account for uncertainties typically arising 
+from limited MC statistics, systematic effects do to composition or limited knowledge 
+of object reconstruction efficiencies, or PDF/scale uncertainties.  Uncertainties 
+from limited MC statistics are typically uncorrelated across each of the 
+search regions.  Other source of systematic uncertainty typically correlate 
+expected yields from various signal regions.  Details of the modeling of 
+systematic uncertainties for each of the background estimations is given below. 
+
+For the lost-e and lost-$\mu+\tau_{\mathrm{had}}$ predictions, the uncertainties
+on the prediction are modeled with a gamma distribution, with the 
+shape parameter set to the observed number of events in the corresponding
+$\ell-\gamma$ control region and the scale parameter is set to be the
+average transfer factor, given in Table~\ref{tab:lost_lepton_SF}.  There 
+are also log-normal prior distributions used to model the uncertainties
+of the transfer factors, which account for:
+
+\begin{itemize}
+ \item limited MC statistics; the corresponding nuisance parameters are fully uncorrelated
+ \item PDF and scale uncertainties; the corresponding nuisance parameters are fully correlated across signal regions and between $e+\gamma$ and $\mu+\gamma$ control regions
+ \item jet energy scale uncertainties; the corresponding nuisance parameters are fully correlated across all signal regions
+ \item lepton scale factor uncertainties; the corresponding nuisance parameters are fully correlated across \ptmiss bins and fully uncorrelated across \nb, \nj regions;
+ \item uncertainties related to soft/collinear photon modeling; the corresponding nuisance parameters are fully correlated (negligible for $\mu+\tau_{\mathrm{had}}$ prediction).
+ %\item b-tagging scale factor uncertainties
+\end{itemize}
+For the fake-rate estimation of $W+\gamma$ and $t\bar{t}+\gamma$ events, the systematics
+from the control region statistics are typically small.  All of the uncertainties
+are modeled with log-normal prior distributions whose uncertainties
+correspond to:
+
+\begin{itemize}
+ \item the statistical uncertainty from the $e\rightarrow\gamma$ control regions; the corresponding nuisance parameters are fully uncorrelated across all signal regions;
+ \item fake rate scale factors; the corresponding nuisance parameters are fully correlated across all signal regions; 
+ \item uncertainties due to pileup and ISR modeling of simulations; the corresponding nuisance parameters are fully correlated across all signal regions.
+\end{itemize}
+
+For the Z$\gamma$ predictions, the statistical uncertainties from control 
+region are modeled with a gamma
+prior distribution whose shape parameter is the observed events in the 
+$Z(\ell\ell)\gamma$ control region and the scale parameter is the 
+purity-corrected MC transfer factor, which in the nomenclature of 
+Equation~\ref{eq:zgamma} is 
+$\beta\cdot N_{\nu\nu+\gamma}^{\mathrm{MC}}/N_{\ell\ell+\gamma}^{\mathrm{MC}}$.
+Additional log-normal prior distributions are included to account 
+for
+
+\begin{itemize}
+ \item the effect of limited MC statistics on $N_{X+\gamma}^{\mathrm{MC}}$; the corresponding nuisance parameters are fully uncorrelated across all signal regions;
+ \item uncertainties on the purity; the corresponding nuisance parameter fully correlates the effect across all signal regions;
+ \item uncertainties due to b-tag scale factors; the corresponding nuisance parameters are fully correlated across \ptmiss and \nj bins, anti-correlated across \nb regions;
+ \item uncertainty due to missing higher order corrections; the corresponding nuisance parameters are fully correlated across \ptmiss bins, uncorrelated across \nb, \nj regions.
+\end{itemize}
+
+
+For the multijet predictions, the systematic uncertainties due to limited 
+control region statistics are modeled with a 
+Gamma prior distribution whose shape parameter is the observed number
+of events in the low-$\Delta\Phi$ control regions and the scale parameter
+is the product of the high-to-low ratio, $R_{\mathrm{h/l}}$, the double ratio
+correction factors, K, and the purity, $\beta$, obtained from data-driven predictions
+of the electroweak backgrounds in the low-$\Delta\Phi$ control regions. 
+Systematic uncertainties on the knowledge of this combined transfer factor are 
+modeled with log-normal prior distributions and account for
+
+\begin{itemize}
+ \item uncertainties on $R_{\mathrm{h/l}}$ due to limited number of events in data sideband; the corresponding nuisance parameters 
+ are fully correlated across \ptmiss bins and fully uncorrelated across \nb, \nj regions;
+ \item uncertainties on K based on validations with zero photon events; the corresponding nuisance parameters are fully 
+   correlated across \ptmiss bins and fully uncorrelated across \nb and \nj regions;
+ \item uncertainties on $\beta$ due to all uncertainties as described above; the corresponding nuisance parameters are 
+  fully uncorrelated across all search regions.
+\end{itemize} 
+
+All of the uncertainties associated with the signal yields, described in detail
+in Section~\ref{sec:signal-systematics}, are modeled with log-normal prior distributions.  
+Nuisance parameters associated with ISR modeling uncertainties are correlated 
+across the various \nj bins, but uncorrelated across \nb and \ptmiss regions.  
+Nuisance parameters associated with \ptmiss modeling in simulation are
+correlated across the various \ptmiss bins and uncorrelated across \nb and 
+\nj regions.  Nuisance parameters associated with b-tagging scale factors are fully correlated
+across all \ptmiss and \nj, but anticorrelated across the \nb regions. The nuisance 
+parameters associated with the statistical uncertainties of our simulated samples
+are fully uncorrelated across all signal regions. A single nuisance parameter
+is associated with the luminosity uncertainty and fully correlates the effect
+across all signal regions. 
+
+Expected and observed limits are computed after adjusting the central values
+and uncertainties associated with all nuisance parameters to data by minimizing 
+them with respect to the observed yields while fixing the signal strength to
+zero. A detailed comparison of all nuisance parameters before (prefit) and after
+(postfit) this fit to data is presented in Appendix~\ref{sec:prefit_postfit}.
+%Also in Appendix~\ref{sec:prefit_postfit} is a detailed enumeration of all 
+%nuisance parameters and their correlation assumptions.   
+
+All of the predictions and the total systematic uncertainties associated with 
+them are show in Tables~\ref{tab:finalPrediction0b} and~\ref{tab:finalPrediction1b}.
+Figure~\ref{fig:predVsData} shows a stack plot of the predictions in the 25 search bins. Note, 
+the low \ptmiss sideband (100-200~\gev) is excluded from the tables and figures since it, by construction,
+has perfect data/MC agreement. A large discrepancy is observed in SR bin 2 where 51 events are observed while 
+a total of 89 background events are expected. More diagnostics ../Figures/Chap3 in this bin and 
+adjacent bins are further scrutinized in Figure \ref{fig:sr123-1} of Appendix~\ref{sec:sr-bin2-diagonostics}.
+We also checked similar distributions in single electron and low-\dphi control regions
+used for estimating fake photon and fake \ptmiss backgrounds in figures~\ref{fig:sr123-ele} and \ref{fig:sr123-ldp} respectively. 
+We do not observe any problematic features in these distributions and shapes generally match well between data and MC.
+
+\begin{table}[htbp]
+%\renewcommand{\arraystretch}{1.25}
+\centering
+\caption{Predicted and observed event yields for each of the $\nb$ = 0 signal regions.}
+\label{tab:finalPrediction0b}
+\begin{tabular}{cccccccc}
+%\hline \hline 
+\ptmiss [GeV] & Z$\gamma$ & Lost-e & Lost-$\mu+\tau_{\mathrm{had}}$ & $e\rightarrow\gamma$ & Multijet & Total & Data \\\hline
+\multicolumn{8}{c}{$2\leq\nj\leq 4, \nb=0$} \\\hline
+$200-270$ & 33.6 $\pm$ 8.3    & 10.5 $\pm$ 2.6   & 31.2 $\pm$ 6.0    & 22.3 $\pm$ 5.4    & 60   $\pm$ 11   & 157 $\pm$ 16  & 151 \\
+$270-350$ & 22.9 $\pm$ 6.0    & 5.8  $\pm$ 1.8   & 29.6 $\pm$ 5.9    & 11.9 $\pm$ 2.9    & 20.5 $\pm$ 4.3  & 91  $\pm$ 10  & 51 \\
+$350-450$ & 17.0 $\pm$ 5.2    & 1.68 $\pm$ 0.88  & 13.9 $\pm$ 3.9    & 6.6 $\pm$ 1.6     & 4.1  $\pm$ 1.4  & 43.3$\pm$ 6.8 & 50 \\
+$450-750$ & 18.1 $\pm$ 7.1    & 1.98 $\pm$ 0.94  & 8.1  $\pm$ 3.1    & 6.7 $\pm$ 1.5     & 2.5  $\pm$ 1.3  & 37.4$\pm$ 8.0 & 33 \\        
+$>750$     & 2.8 $\pm$ 1.2    & $0.00_{-0.00}^{+0.69}$  & 1.2 $\pm$ 1.2  & 0.79 $\pm$ 0.19  & $0.41_{-0.41}^{+0.42}$  & 5.2 $\pm$ 1.9  & 6 \\
+\hline 
+\multicolumn{8}{c}{$5\leq\nj\leq 6, \nb=0$} \\\hline
+$200-270$ & 3.09 $\pm$ 0.78  & 1.28 $\pm$ 0.61  & 5.1  $\pm$ 1.9     & 3.53 $\pm$ 0.75  & 15.8 $\pm$ 4.8  & 28.8 $\pm$ 5.3  & 26 \\
+$270-350$ & 1.98 $\pm$ 0.54  & 2.06 $\pm$ 0.80  & 3.2  $\pm$ 1.5     & 2.39 $\pm$ 0.56  & 3.7  $\pm$ 1.8  & 13.3 $\pm$ 2.6  & 11  \\
+$350-450$ & 1.49 $\pm$ 0.47  & 0.77 $\pm$ 0.46  & $0.64_{-0.64}^{+0.65}$  & 1.26 $\pm$ 0.30  & 1.23 $\pm$ 0.97  & 5.4 $\pm$ 1.4  & 8 \\
+$>450$ & 1.65 $\pm$ 0.65  & 0.26 $\pm$ 0.26  & 1.9 $\pm$ 1.1  & 1.00 $\pm$ 0.24  & $0.07_{-0.07}^{+0.52}$  & 4.9 $\pm$ 1.4   & 7 \\
+\hline 
+\multicolumn{8}{c}{$\nj\geq 7, \nb=0$} \\\hline
+$200-270$ & 0.37 $\pm$ 0.11  & $0.00_{-0.00}^{+0.61}$  & $0.0_{-0.0}^{+1.3}$  & 0.72 $\pm$ 0.16  & 1.8 $\pm$ 1.2  & 2.9 $\pm$ 1.9  & 3 \\
+$270-350$ & 0.24 $\pm$ 0.08  & $0.34_{-0.34}^{+0.35}$  & 1.5 $\pm$ 1.0  & 0.38 $\pm$ 0.10  & 1.22 $\pm$ 0.94  & 3.6 $\pm$ 1.5  & 3 \\
+$350-450$ & 0.16 $\pm$ 0.07  & $0.34_{-0.34}^{+0.35}$  & 0.73 $\pm$ 0.73  & 0.17 $\pm$ 0.05  & $0.07_{-0.07}^{+0.50}$  & 1.46 $\pm$ 0.96  & 0 \\
+$>450$ & 0.17 $\pm$ 0.08  & $0.00_{-0.00}^{+0.61}$  & $0.0_{-0.0}^{+1.3}$  & 0.20 $\pm$ 0.06  & $0.00_{-0.00}^{+0.75}$  & $0.37_{-0.37}^{+1.60}$  & 0 \\
+\end{tabular}
+\end{table}
+
+\begin{table}[htbp]
+%\renewcommand{\arraystretch}{1.25}
+\centering
+\caption{predicted and observed event yields for each of the $\nb\geq1$ signal regions.}
+\label{tab:finalPrediction1b}
+\begin{tabular}{cccccccc}
+%\hline \hline 
+\ptmiss [GeV] & Z$\gamma$ & Lost-e & Lost-$\mu+\tau_{\mathrm{had}}$ & $e\rightarrow\gamma$ & Multijet & Total & Data \\\hline
+\multicolumn{8}{c}{$2\leq\nj\leq4, \nb\geq1$} \\\hline
+$200-270$ & 3.55 $\pm$ 0.89  & 3.4  $\pm$ 1.5   & 14.5 $\pm$ 4.2   & 7.1  $\pm$ 1.7   & 11.3 $\pm$ 3.3   & 39.8  $\pm$ 5.9   & 50 \\
+$270-350$ & 2.45 $\pm$ 0.65  & 2.9  $\pm$ 1.4   & 5.6  $\pm$ 2.5   & 3.79 $\pm$ 0.92  & 5.7  $\pm$ 1.8   & 20.4  $\pm$ 3.6   & 20   \\
+$350-450$ & 1.81 $\pm$ 0.55  & $0.0_{-0.0}^{+1.0}$  & 1.1 $\pm$ 1.1  & 2.00 $\pm$ 0.45  & 0.59 $\pm$ 0.44  & 5.5  $\pm$ 1.7  & 4  \\
+$>450$ & 2.14 $\pm$ 0.84  & 2.3 $\pm$ 1.2  & 4.4 $\pm$ 2.3  & 1.62 $\pm$ 0.38  & 0.95 $\pm$ 0.54  & 11.5 $\pm$ 2.8  & 8  \\
+\hline
+\multicolumn{8}{c}{$5\leq\nj\leq6, \nb\geq1$} \\\hline
+$200-270$ & 0.76 $\pm$ 0.20  & 3.5  $\pm$ 1.3   & 2.4  $\pm$ 1.4   & 5.5  $\pm$ 1.2   & 7.7  $\pm$ 2.4   & 19.9  $\pm$ 3.3   & 21 \\
+$270-350$ & 0.49 $\pm$ 0.14  & 1.06 $\pm$ 0.64  & 4.0  $\pm$ 1.8   & 2.98 $\pm$ 0.63  & 2.1 $\pm$ 1.0  & 10.6  $\pm$ 2.3  & 15 \\
+$350-450$ & 0.32 $\pm$ 0.11  & 0.71 $\pm$ 0.51  & 2.4  $\pm$ 1.4   & 1.38 $\pm$ 0.29  & $0.30_{-0.30}^{+0.49}$  & 5.1 $\pm$ 1.6  & 6   \\
+$>450$ & 0.48 $\pm$ 0.20  & $0.35_{-0.35}^{+0.36}$  & $0.0_{-0.0}^{+1.4}$  & 0.67 $\pm$ 0.15  & $0.00_{-0.00}^{+0.56}$  & $1.5_{-1.5}^{+1.6}$  & 2 \\
+\hline
+\multicolumn{8}{c}{$\nj\geq7, \nb\geq1$} \\\hline
+$200-270$ & 0.13 $\pm$ 0.04  & 0.72 $\pm$ 0.53  & 2.0 $\pm$ 1.2  & 1.68 $\pm$ 0.37  & 5.9 $\pm$ 5.0  & 10.5 $\pm$ 5.1  & 12 \\
+$270-350$ & 0.10 $\pm$ 0.04  & $0.00_{-0.00}^{+0.65}$  & 1.33 $\pm$ 0.96  & 0.73 $\pm$ 0.16  & $0.0_{-0.0}^{+1.1}$  & 2.2 $\pm$ 1.6  & 1 \\
+$350-450$ & 0.07 $\pm$ 0.03  & 0.72 $\pm$ 0.53  & $0.0_{-0.0}^{+1.2}$  & 0.44 $\pm$ 0.10  & $0.0_{-0.0}^{+1.1}$  & $1.2_{-1.2}^{+1.7}$  & 1 \\
+$>450$ & 0.04 $\pm$ 0.02  & $0.36_{-0.36}^{+0.37}$  & $0.0_{-0.0}^{+1.2}$  & 0.23 $\pm$ 0.07  & $0.0_{-0.0}^{+1.1}$  & $0.6_{-0.6}^{+1.7}$  & 1 \\
+\end{tabular}
+\end{table}
+
+\begin{figure}
+\centering
+\includegraphics[width=0.98\linewidth]{../Figures/Chap3/results/c_predVsDataSBins.pdf}
+\caption{Distribution of predicted background events and observed events in each of the 25 signal regions.}
+\label{fig:predVsData}
+\end{figure}
+
+The test statistic $q_{\mu} = -2 \ln{\mathcal{L}_{\mu}/ \mathcal{L}_{\mathrm{max}}}$, 
+where $\mathcal{L}_{\mathrm{max}}$ 
+is the maximum likelihood determined by allowing all parameters, including the signal 
+strength, to float, and $\mathcal{L}_{\mu}$
+is the profiled likelihood. Limits are determined using the asymptotic form of the test 
+statistic \cite{Cowan:2010js} 
+in conjunction with the $CL_s$ criterion \cite{Junk1999,bib-cls}. Expected 
+upper limits are derived by varying observed yields according to expectations from the 
+background only hypothesis.
+
+Using the statistical procedure described above, 95\% confidence level (CL) upper limits are
+computed on the signal cross section for each simplified model and each mass point.  
+Figure~\ref{fig:T5bbbbExclusion} shows the expected and observed exclusion contours for the 
+T5bbbbZG and T5bbbbHG SMS 
+models in the gluino-NLSP mass plane.  The largest gluino exclusion limits occur for 
+points with moderate NLSP mass, where the LSP, SM bosons, and the b-quarks from
+gluino decays are imparted with large momentum; we exclude gluino 
+masses below 2120~\gev.  For small NLSP masses, limits are degraded because
+photon \pt and \ptmiss spectrums become softer, lowering the signal efficiency;
+we exclude gluino masses below 1940~\gev.
+
+For very low NLSP masses ($<$ 91\gev), in
+case of T5bbbbZG and T5ttttZG models, sensitivity starts to increase if NLSP mass is
+below Z mass. In these cases, Z is off-shell and gravitino carries more momentum gives larger \ptmiss.
+So the sensitivity increases and hence a kink is observed in the contours. Acceptance $\times$ efficiency plots
+shown in figure \ref{fig:sigEff} in Appendix \ref{subsec:SigAccEff} also support this argument.
+In T5qqqqHG models, there are no mass points below Higgs mass since Higgs is always on shell.
+
+For large NLSP masses the limits are degraded because the jet multiplicity and b-tagged jet multiplicity
+is reduces, and in turn ST is lowered.  This has the effect that the overall 
+signal efficiency is degraded and signal events tend to be concentrated in bins
+with higher background yields, as compared to the moderate NLSP mass points.  
+For significance calculations we use the profile-likelihood calculation with one times signal 
+expectation included.  Figure~\ref{fig:T5bbbbSignficance} - \ref{fig:T6ttSignficance} show the observed significance
+for each point in the gluino-NLSP mass plane for the T5qqqqHG, T5bbbbZG, T5ttttZG and T6ttZG SMS models.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.66\linewidth]{../Figures/Chap3/results/T5qqqqHg_exclusion.pdf}
+\caption{Expected and observed exclusion contours in the $m_{\tilde{g}}-m_{\tilde{\chi}_{1}^{0}}$ plane for the T5qqqqHG SMS model.}
+\label{fig:T5qqqqExclusion}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.66\linewidth]{../Figures/Chap3/results/T5bbbbZg_exclusion.pdf}
+\caption{Expected and observed exclusion contours in the $m_{\tilde{g}}-m_{\tilde{\chi}_{1}^{0}}$ plane for the T5bbbbZG SMS model.}
+\label{fig:T5bbbbExclusion}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.66\linewidth]{../Figures/Chap3/results/T5ttttZg_exclusion.pdf}
+\caption{Expected and observed exclusion contours in the $m_{\tilde{g}}-m_{\tilde{\chi}_{1}^{0}}$ plane for the T5ttttZG SMS model.}
+\label{fig:T5ttttExclusion}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.66\linewidth]{../Figures/Chap3/results/T6ttZg_exclusion.pdf}
+\caption{Expected and observed exclusion contours in the $m_{\tilde{t}}-m_{\tilde{\chi}_{1}^{0}}$ plane for the T6ttZG SMS model.}
+\label{fig:T6ttExclusion}
+\end{figure}
+
+
+\begin{figure}[h]
+\centering
+%\includegraphics[width=0.49\linewidth]{../Figures/Chap3/results/T5qqqqHg_ExpSignif.pdf}
+\includegraphics[width=0.49\linewidth]{../Figures/Chap3/results/T5qqqqHg_ObsSignif.pdf}
+\caption{Observed significance in the $m_{\tilde{g}}-m_{\tilde{\chi}_{1}^{0}}$ plane for 
+ T5qqqqHG SMS model.}
+%The color map shows the expected significance for each mass point.  The red line shows the contour for which we expect $5\sigma$ expected significance. Right plot shows the observed significance. For $m_{\tilde{\chi}_{1}^{0}}$ below 1000\gev, observed significance is consistent with 0.}
+\label{fig:T5qqqqSignficance}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+%\includegraphics[width=0.49\linewidth]{../Figures/Chap3/results/T5bbbbZg_ExpSignif.pdf}
+\includegraphics[width=0.49\linewidth]{../Figures/Chap3/results/T5bbbbZg_ObsSignif.pdf}
+\caption{Observed significance in the $m_{\tilde{g}}-m_{\tilde{\chi}_{1}^{0}}$ plane for
+ T5bbbbZG SMS model.}
+%The color map shows the expected significance for each mass point.  The red line shows the contour for which we expect $5\sigma$ expected significance. Right plot shows the observed significance.}
+\label{fig:T5bbbbSignficance}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+%\includegraphics[width=0.49\linewidth]{../Figures/Chap3/results/T5ttttZg_ExpSignif.pdf}
+\includegraphics[width=0.49\linewidth]{../Figures/Chap3/results/T5ttttZg_ObsSignif.pdf}
+\caption{Observed significance in the $m_{\tilde{g}}-m_{\tilde{\chi}_{1}^{0}}$ plane for
+ T5ttttZG SMS model.}
+%The color map shows the expected significance for each mass point.  The red line shows the contour for which we expect $5\sigma$ expected significance. Right plot shows the observed significance.}
+\label{fig:T5ttttSignficance}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+%\includegraphics[width=0.49\linewidth]{../Figures/Chap3/results/T6ttZg_ExpSignif.pdf}
+\includegraphics[width=0.49\linewidth]{../Figures/Chap3/results/T6ttZg_ObsSignif.pdf}
+\caption{Observed significance in the $m_{\tilde{t}}-m_{\tilde{\chi}_{1}^{0}}$ plane for
+ T6ttZG SMS model.}
+%The color map shows the expected significance for each mass point.  The red line shows the contour for which we expect $5\sigma$ expected significance. Right plot shows the observed significance.}
+\label{fig:T6ttSignficance}
+\end{figure}
